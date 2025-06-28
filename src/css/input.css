@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "estedad-medium";
+  src: url("/font/ttf/FD/Estedad-FD-Medium.ttf");
+}
+@font-face {
+  font-family: "estedad-regular";
+  src: url("/font/ttf/FD/Estedad-FD-Regular.ttf");
+}
+@font-face {
+  font-family: "estedad-light";
+  src: url("/font/ttf/FD/Estedad-FD-Light.ttf");
+}
+@font-face {
+  font-family: "estedad-bold";
+  src: url("/font/ttf/FD/Estedad-FD-Bold.ttf");
+}
+
+body.search-open .menu {
+  display: none !important;
+}
+

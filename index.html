@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Rent | اُتـورِنـت</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.svg" />
+    <link href="./src/css/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#F3F3F3] h-[9000px]">
+    <!-- start website -->
+    <div class="main w-screen h-fit">
+      <div class="relative bg-gray-900 text-white h-[683px] w-full">
+        <!-- Background Image -->
+        <div
+          class="absolute inset-0 bg-[url('/img/cars/header.jpg')] bg-cover bg-center z-0"
+        ></div>
+        <!-- Overlay for search dropdown -->
+        <div
+          id="overlay"
+          class="fixed inset-0 bg-[#00000066] z-40 hidden"
+        ></div>
+        <!-- start header -->
+        <header
+          dir="rtl"
+          class="w-6/7 h-[48px] md:h-[96px] bg-white mx-auto rounded-b-2xl flex items-center justify-between !pr-[16px] !pl-[16px] md:!pr-[32px] md:!pl-[32px] !font-[estedad-regular] z-50 sticky top-0 shadow-lg"
+        >
+          <!-- Hamburger Menu -->
+          <input type="checkbox" id="menu-toggle" class="hidden peer" />
+          <label
+            for="menu-toggle"
+            class="block lg:hidden cursor-pointer px-4 py-2 relative"
+          >
+            <img src="/img/icon/1broken.svg" alt="menu" />
+          </label>
+          <div
+            class="peer-checked:flex hidden flex-col items-center gap-3 bg-white text-gray-600 font-extralight transition-all !font-[estedad-regular] w-1/1 !px-6 !py-3 absolute top-14 md:top-25 right-0 rounded-lg !shadow-[0_4px_30px_10px_rgba(0,0,0,0.9)] z-40 lg:hidden duration-500 ease-in-out transform translate-y-4 text-sm"
+          >
+            <a
+              href="#"
+              class="text-white bg-gray-700 hover:bg-blue-900 transition-all focus:ring-3 focus:ring-blue-200 font-medium rounded-lg px-[16px] py-[8px] focus:outline-none text-center cursor-pointer m-0.5 self-center"
+            >
+              ورود / ثبت‌نام</a
+            >
+            <a href="#" class="!transition-colors focus:!text-blue-700">
+              رزرو خودرو</a
+            >
+            <a href="#" class="!transition-colors focus:!text-blue-700">
+              خدمات ما</a
+            >
+            <a href="#" class="!transition-colors focus:!text-blue-700">
+              بلاگ</a
+            >
+            <a href="#" class="!transition-colors focus:!text-blue-700">
+              درباره ما</a
+            >
+            <a href="#" class="!transition-colors focus:!text-blue-700">
+              تماس با ما</a
+            >
+          </div>
+          <div class="header-logo">
+            <img
+              src="/img/logo/Logo.svg"
+              alt=""
+              class="logo w-22 md:w-39 lg:!mr-0 cursor-pointer md:mr-21 self-center"
+            />
+          </div>
+          <!-- desktop menu -->
+          <div class="menu hidden lg:flex space-x-6 gap-10 text-center">
+            <a
+              href="#"
+              class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
+              >رزرو خودرو</a
+            >
+            <a
+              href="#"
+              class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
+              >خدمات ما</a
+            >
+            <a
+              href="#"
+              class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
+              >بلاگ</a
+            >
+            <a
+              href="#"
+              class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
+              >درباره ما</a
+            >
+            <a
+              href="#"
+              class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
+              >تماس با ما</a
+            >
+            <!-- search icon -->
+            <a
+              href="#"
+              id="searchToggle"
+              class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
+              ><img src="/img/icon/1search.svg" alt="" srcset=""
+            /></a>
+          </div>
+
+          <!-- search box -->
+          <div
+            id="searchBox"
+            class="fixed z-50 bg-white rounded-[16px] p-[16px] gap-[24px] top-[24px] left-1/2 -translate-x-1/2 w-[55%] h-[333px] flex-col justify-start items-center hidden transition-all duration-1000 ease-in-out"
+          >
+            <div
+              class="w-full flex items-center border-b border-[#D7D7D7] pb-6 gap-2"
+            >
+              <img
+                src="/img/icon/1search.svg"
+                alt="search icon"
+                class="w-6 h-6"
+              />
+              <input
+                type="text"
+                placeholder="جستجو"
+                class="w-full bg-transparent focus:outline-none text-gray-600 text-base placeholder-[#C2C2C2]"
+              />
+            </div>
+          </div>
+          <!-- end search box -->
+
+          <div id="loginButton" class="login">
+            <button
+              class="hidden lg:block !text-white !bg-blue-600 hover:!bg-blue-800 transition-all focus:ring-3 focus:ring-blue-200 font-medium !rounded-lg !px-[16px] !py-[8px] focus:outline-none text-center cursor-pointer !my-[28px]"
+            >
+              ورود / ثبت‌نام
+            </button>
+          </div>
+          <a class="block lg:hidden" href="/">
+            <img src="/img/icon/1login.svg" alt="ورود / ثبت‌نام" />
+          </a>
+        </header>
+        <!-- Hero Text -->
+        <div
+          dir="rtl"
+          class="absolute inset-0 flex flex-col items-start justify-center md:gap-2 gap-4 md:!mr-[108px] !mr-3"
+        >
+          <h1
+            class="!font-[estedad-bold] !text-4xl md:!text-[44px] leading-[150%] text-[#FDB713]"
+          >
+            اُتـــو رِنت؛ سریع،<br />
+            آسان و به صرفه
+          </h1>
+          <p class="!text-sm md:!text-xl mt-4 !font-[estedad-light]">
+            سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
+          </p>
+          <div class="flex buttons !my-[28px] !font-[estedad-medium] !gap-3">
+            <button
+              class="!text-black !bg-[#FDB713] hover:!bg-yellow-600 transition-all focus:ring-1 focus:ring-yellow-500 !font-bold !rounded-[7px] md:!px-[24px] md:!py-[8px] !px-[12px] !py-[4px] focus:outline-none text-center cursor-pointer flex flex-row items-center gap-2.5 !h-[48px] !text-sm md:!text-base"
+            >
+              <img src="/img/icon/car.svg" alt="" />
+              رزرو آسان خودرو
+            </button>
+            <button
+              class="!text-white bg-transparent hover:!bg-gray-600 transition-all focus:ring-1 focus:ring-gray-400 !font-bold md:!px-[24px] md:!py-[8px] !px-[12px] !py-[4px] focus:outline-none text-center cursor-pointer !h-[48px] !rounded-[7px] flex flex-row items-center gap-2.5 !border !border-white !text-sm md:!text-base"
+            >
+              <img src="/img/icon/arrow-left.svg" alt="" />
+
+              تماس با ما
+            </button>
+          </div>
+        </div>
+        <div
+          class="absolute top-[578px] left-1/2 transform -translate-x-1/2 md:w-6/7 w-11/12 h-[150px] md:h-[201px] bg-white !border !border-gray-300 !rounded-[16px] p-[24px] gap-[16px] flex"
+        ></div>
+      </div>
+      <!-- close .relative bg-gray-900 -->
+    </div>
+    <!-- close .main -->
+    <script>
+      const toggle = document.getElementById("searchToggle");
+      const overlay = document.getElementById("overlay");
+      const searchBox = document.getElementById("searchBox");
+      const loginButton = document.getElementById("loginButton");
+      const menu = document.querySelector(".menu");
+      const logo = document.querySelector(".header-logo");
+
+      function openSearch() {
+        document.body.classList.add("search-open");
+        overlay.classList.remove("hidden");
+        searchBox.classList.remove("hidden");
+        searchBox.classList.add("flex");
+
+        loginButton?.classList.add("hidden");
+        logo?.classList.add("ml-auto");
+      }
+
+      function closeSearch() {
+        document.body.classList.remove("search-open");
+        overlay.classList.add("hidden");
+        searchBox.classList.add("hidden");
+        searchBox.classList.remove("flex");
+
+        loginButton?.classList.remove("hidden");
+        logo?.classList.remove("ml-auto");
+      }
+
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isHidden = searchBox.classList.contains("hidden");
+        if (isHidden) {
+          openSearch();
+        } else {
+          closeSearch();
+        }
+      });
+
+      overlay.addEventListener("click", () => {
+        closeSearch();
+      });
+    </script>
+  </body>
+</html>
