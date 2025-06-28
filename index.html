@@ -148,6 +148,7 @@
           <p class="!text-sm md:!text-xl mt-4 !font-[estedad-light]">
             سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
           </p>
+          <!-- main page buttons -->
           <div class="flex buttons !my-[28px] !font-[estedad-medium] !gap-3">
             <button
               class="!text-black !bg-[#FDB713] hover:!bg-yellow-600 transition-all focus:ring-1 focus:ring-yellow-500 !font-bold !rounded-[7px] md:!px-[24px] md:!py-[8px] !px-[12px] !py-[4px] focus:outline-none text-center cursor-pointer flex flex-row items-center gap-2.5 !h-[48px] !text-sm md:!text-base"
@@ -171,47 +172,6 @@
       <!-- close .relative bg-gray-900 -->
     </div>
     <!-- close .main -->
-    <script>
-      const toggle = document.getElementById("searchToggle");
-      const overlay = document.getElementById("overlay");
-      const searchBox = document.getElementById("searchBox");
-      const loginButton = document.getElementById("loginButton");
-      const menu = document.querySelector(".menu");
-      const logo = document.querySelector(".header-logo");
-
-      function openSearch() {
-        document.body.classList.add("search-open");
-        overlay.classList.remove("hidden");
-        searchBox.classList.remove("hidden");
-        searchBox.classList.add("flex");
-
-        loginButton?.classList.add("hidden");
-        logo?.classList.add("ml-auto");
-      }
-
-      function closeSearch() {
-        document.body.classList.remove("search-open");
-        overlay.classList.add("hidden");
-        searchBox.classList.add("hidden");
-        searchBox.classList.remove("flex");
-
-        loginButton?.classList.remove("hidden");
-        logo?.classList.remove("ml-auto");
-      }
-
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        const isHidden = searchBox.classList.contains("hidden");
-        if (isHidden) {
-          openSearch();
-        } else {
-          closeSearch();
-        }
-      });
-
-      overlay.addEventListener("click", () => {
-        closeSearch();
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
