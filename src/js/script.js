@@ -38,3 +38,18 @@ toggle.addEventListener("click", (e) => {
 overlay.addEventListener("click", () => {
   closeSearch();
 });
+// Mobile Menu Overlay
+const menuToggle = document.getElementById("menu-toggle");
+
+menuToggle.addEventListener("change", () => {
+  if (menuToggle.checked) {
+    overlay.classList.remove("hidden");
+  } else {
+    overlay.classList.add("hidden");
+  }
+});
+
+overlay.addEventListener("click", () => {
+  menuToggle.checked = false;
+  overlay.classList.add("hidden");
+});

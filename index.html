@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auto Rent | اُتـورِنـت</title>
+    <title>AutoRent | اُتـورِنـت</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.svg" />
     <link href="./src/css/output.css" rel="stylesheet" />
   </head>
@@ -15,7 +15,7 @@
         <div
           class="absolute inset-0 bg-[url('/img/cars/header.jpg')] bg-cover bg-center z-0"
         ></div>
-        <!-- Overlay for search dropdown -->
+        <!-- Overlay for search dropdown & mobile menu-->
         <div
           id="overlay"
           class="fixed inset-0 bg-[#00000066] z-40 hidden"
@@ -34,14 +34,26 @@
             <img src="/img/icon/1broken.svg" alt="menu" />
           </label>
           <div
-            class="peer-checked:flex hidden flex-col items-center gap-3 bg-white text-gray-600 font-extralight transition-all !font-[estedad-regular] w-1/1 !px-6 !py-3 absolute top-14 md:top-25 right-0 rounded-lg !shadow-[0_4px_30px_10px_rgba(0,0,0,0.9)] z-40 lg:hidden duration-500 ease-in-out transform translate-y-4 text-sm"
+            class="peer-checked:flex hidden flex-col gap-3 bg-white text-gray-600 font-extralight transition-all !font-[estedad-regular] w-1/1 !px-6 !py-3 absolute top-14 md:top-25 right-0 rounded-lg !shadow-[0_4px_30px_10px_rgba(0,0,0,0.9)] z-40 lg:hidden duration-500 ease-in-out transform translate-y-4 text-sm"
           >
-            <a
-              href="#"
-              class="text-white bg-gray-700 hover:bg-blue-900 transition-all focus:ring-3 focus:ring-blue-200 font-medium rounded-lg px-[16px] py-[8px] focus:outline-none text-center cursor-pointer m-0.5 self-center"
+            <!-- search box mobile -->
+            <div
+              dir="ltr"
+              class="flex px-4 py-3 rounded-md border-b border-gray-500 overflow-hidden max-w-md w-1/1 mx-auto gap-1 self-start"
             >
-              ورود / ثبت‌نام</a
-            >
+              <input
+                type="text"
+                placeholder="جستجو"
+                id="searchInput"
+                dir="rtl"
+                class="w-full outline-none bg-transparent text-gray-600 text-xs"
+              />
+              <img
+                src="/img/icon/1search.svg"
+                alt="search icon"
+                class="w-4 h-4 cursor-pointer"
+              />
+            </div>
             <a href="#" class="!transition-colors focus:!text-blue-700">
               رزرو خودرو</a
             >
@@ -104,7 +116,7 @@
           <!-- search box -->
           <div
             id="searchBox"
-            class="fixed z-50 bg-white rounded-[16px] p-[16px] gap-[24px] top-[24px] left-1/2 -translate-x-1/2 w-[55%] h-[333px] flex-col justify-start items-center hidden transition-all duration-1000 ease-in-out"
+            class="fixed z-50 bg-white rounded-[16px] p-[16px] gap-6 top-[24px] left-1/2 -translate-x-1/2 w-[55%] h-[333px] flex-col justify-start items-center hidden transition-all duration-1000 ease-in-out"
           >
             <div
               class="w-full flex items-center border-b border-[#D7D7D7] pb-6 gap-2"
@@ -120,9 +132,47 @@
                 class="w-full bg-transparent focus:outline-none text-gray-600 text-base placeholder-[#C2C2C2]"
               />
             </div>
+            <!-- search history -->
+            <div
+              class=" w-full h-fit flex flex-row gap-0.5 justify-between"
+            >
+              <div class="flex w-full h-fit  gap-2">
+                <img src="./img/icon/history-clock.svg" class="w-6 h-6" />
+                <span class="text-[#494949]"> تاریخچه جستجوهای شما </span>
+              </div>
+              <div class=" h-fit flex">
+                <a href="/">
+                  <img
+                    src="./img/icon/delete-icon.svg"
+                    class="w-6 h-6 cursor-pointer mr-2"
+                    alt="حذف تاریخچه"
+                  />
+                </a>
+              </div>
+            </div>
+            <!-- search history tags -->
+            <div class="searches  w-full h-fit flex gap-2">
+              <a href="" class="search-tag">بنز S۵۰۰</a>
+              <a href="" class="search-tag">DS ۳</a>
+              <a href="" class="search-tag">Rolls Royce Cullinan</a>
+              <a href="" class="search-tag">پژو ۲۰۶</a>
+              <a href="" class="search-tag">Tiggo ۸ Pro</a>
+            </div>
+            <div class="flex w-full h-fit  gap-2 mt-[17px]">
+              <img src="./public/img/icon/heart-search.svg" class="w-6 h-6" />
+              <span class="text-[#494949]">جستجوهای پرطرفدار</span>
+            </div>
+            <!-- popular searches -->
+            <div class=" w-full h-fit flex gap-2">
+              <a href="" class="search-tag">Ferrari Roma</a>
+              <a href="" class="search-tag">Peugeot 2008</a>
+              <a href="" class="search-tag">Audi A8</a>
+              <a href="" class="search-tag">بنز S۵۰۰</a>
+              <a href="" class="search-tag">پژو ۲۰۶</a>
+            </div>
           </div>
           <!-- end search box -->
-
+          <!-- login button for desktop -->
           <div id="loginButton" class="login">
             <button
               class="hidden lg:block !text-white !bg-blue-600 hover:!bg-blue-800 transition-all focus:ring-3 focus:ring-blue-200 font-medium !rounded-lg !px-[16px] !py-[8px] focus:outline-none text-center cursor-pointer !my-[28px]"
@@ -130,6 +180,7 @@
               ورود / ثبت‌نام
             </button>
           </div>
+          <!-- login button for mobile -->
           <a class="block lg:hidden" href="/">
             <img src="/img/icon/1login.svg" alt="ورود / ثبت‌نام" />
           </a>
@@ -165,13 +216,14 @@
             </button>
           </div>
         </div>
+        <!-- Start car rent filter box -->
         <div
           class="absolute top-[578px] left-1/2 transform -translate-x-1/2 md:w-6/7 w-11/12 h-[150px] md:h-[201px] bg-white !border !border-gray-300 !rounded-[16px] p-[24px] gap-[16px] flex"
         ></div>
       </div>
-      <!-- close .relative bg-gray-900 -->
+      <!-- close relative wrapper for key absolute position elements -->
     </div>
-    <!-- close .main -->
-    <script src="script.js"></script>
+    <!-- end website -->
+    <script src="./src/js/script.js"></script>
   </body>
 </html>

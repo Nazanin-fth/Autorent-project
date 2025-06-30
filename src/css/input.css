@@ -20,4 +20,8 @@
 body.search-open .menu {
   display: none !important;
 }
-
+@layer components {
+  .search-tag {
+    @apply h-10 rounded-[32px] border border-[#F3F3F3] px-[10px] py-[6px] flex items-center justify-center gap-2 text-[#5E5E5E] text-sm font-[estedad-regular];
+  }
+}

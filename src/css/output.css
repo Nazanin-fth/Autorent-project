@@ -7,21 +7,27 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-200: oklch(88.5% 0.062 18.334);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-yellow-600: oklch(68.1% 0.162 75.834);
+    --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-blue-200: oklch(88.2% 0.059 254.128);
+    --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-blue-800: oklch(42.4% 0.199 265.638);
-    --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-md: 28rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
@@ -33,6 +39,7 @@
     --font-weight-extralight: 200;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
+    --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-2xl: 1rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -230,9 +237,6 @@
   .z-50 {
     z-index: 50;
   }
-  .m-0\.5 {
-    margin: calc(var(--spacing) * 0.5);
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -242,8 +246,14 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
+  .mt-\[17px\] {
+    margin-top: 17px;
+  }
   .\!mr-3 {
     margin-right: calc(var(--spacing) * 3) !important;
+  }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
   }
   .ml-auto {
     margin-left: auto;
@@ -259,6 +269,9 @@
   }
   .\!h-\[48px\] {
     height: 48px !important;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
   .h-6 {
     height: calc(var(--spacing) * 6);
@@ -284,6 +297,9 @@
   .w-1\/1 {
     width: calc(1/1 * 100%);
   }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
@@ -304,6 +320,9 @@
   }
   .w-screen {
     width: 100vw;
+  }
+  .max-w-md {
+    max-width: var(--container-md);
   }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
@@ -343,6 +362,12 @@
   .\!gap-3 {
     gap: calc(var(--spacing) * 3) !important;
   }
+  .gap-0\.5 {
+    gap: calc(var(--spacing) * 0.5);
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -354,6 +379,9 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
@@ -374,6 +402,12 @@
   .self-center {
     align-self: center;
   }
+  .self-start {
+    align-self: flex-start;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .\!rounded-\[7px\] {
     border-radius: 7px !important;
   }
@@ -388,6 +422,9 @@
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
   }
   .rounded-b-2xl {
     border-bottom-right-radius: var(--radius-2xl);
@@ -410,6 +447,9 @@
   .border-\[\#D7D7D7\] {
     border-color: #D7D7D7;
   }
+  .border-gray-500 {
+    border-color: var(--color-gray-500);
+  }
   .\!bg-\[\#FDB713\] {
     background-color: #FDB713 !important;
   }
@@ -422,11 +462,20 @@
   .bg-\[\#F3F3F3\] {
     background-color: #F3F3F3;
   }
-  .bg-gray-700 {
-    background-color: var(--color-gray-700);
+  .bg-amber-200 {
+    background-color: var(--color-amber-200);
+  }
+  .bg-blue-300 {
+    background-color: var(--color-blue-300);
+  }
+  .bg-emerald-300 {
+    background-color: var(--color-emerald-300);
   }
   .bg-gray-900 {
     background-color: var(--color-gray-900);
+  }
+  .bg-red-200 {
+    background-color: var(--color-red-200);
   }
   .bg-transparent {
     background-color: transparent;
@@ -461,9 +510,6 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
-  .px-\[16px\] {
-    padding-inline: 16px;
-  }
   .\!py-3 {
     padding-block: calc(var(--spacing) * 3) !important;
   }
@@ -476,8 +522,8 @@
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
-  .py-\[8px\] {
-    padding-block: 8px;
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
   .\!pr-\[16px\] {
     padding-right: 16px !important;
@@ -519,6 +565,10 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
   .leading-\[150\%\] {
     --tw-leading: 150%;
     line-height: 150%;
@@ -543,6 +593,9 @@
   }
   .\!text-white {
     color: var(--color-white) !important;
+  }
+  .text-\[\#494949\] {
+    color: #494949;
   }
   .text-\[\#FDB713\] {
     color: #FDB713;
@@ -591,6 +644,10 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
   .peer-checked\:flex {
     &:is(:where(.peer):checked ~ *) {
       display: flex;
@@ -614,13 +671,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-yellow-600) !important;
-      }
-    }
-  }
-  .hover\:bg-blue-900 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-blue-900);
       }
     }
   }
@@ -785,6 +835,25 @@
 }
 body.search-open .menu {
   display: none !important;
+}
+@layer components {
+  .search-tag {
+    display: flex;
+    height: calc(var(--spacing) * 10);
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing) * 2);
+    border-radius: 32px;
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: #F3F3F3;
+    padding-inline: 10px;
+    padding-block: 6px;
+    font-family: estedad-regular;
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+    color: #5E5E5E;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
