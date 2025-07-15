@@ -24,4 +24,20 @@ body.search-open .menu {
   .search-tag {
     @apply h-10 rounded-[32px] border border-[#F3F3F3] px-[10px] py-[6px] flex items-center justify-center gap-2 text-[#5E5E5E] text-sm font-[estedad-regular];
   }
+  .rent-tag {
+    @apply border border-[#D7D7D7] rounded-[20px] lg:px-3 lg:py-2 lg:text-sm text-[10px] md:text-xs px-2 py-2 text-black font-[estedad-medium] cursor-pointer transition-colors duration-100;
+  }
+
+  .rent-title {
+    @apply lg:text-sm text-[9px] md:text-[12px] font-[estedad-regular] text-[#0C0C0C];
+  }
+  .flex-center {
+    @apply flex items-center justify-center gap-1;
+  }
+  .input-style {
+    @apply lg:px-1 py-1 rounded lg:text-sm text-[#212121] font-[estedad-regular] focus:outline-none text-xs;
+  }
+}
+.pwt-datepicker-input-element {
+  width: 100px;
 }

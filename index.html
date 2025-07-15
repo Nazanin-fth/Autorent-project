@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AutoRent | اُتـورِنـت</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css"
+    />
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
+    <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
     <link href="./src/css/output.css" rel="stylesheet" />
   </head>
   <body class="bg-[#F3F3F3] h-[9000px]">
@@ -133,14 +140,12 @@
               />
             </div>
             <!-- search history -->
-            <div
-              class=" w-full h-fit flex flex-row gap-0.5 justify-between"
-            >
-              <div class="flex w-full h-fit  gap-2">
+            <div class="w-full h-fit flex flex-row gap-0.5 justify-between">
+              <div class="flex w-full h-fit gap-2">
                 <img src="./img/icon/history-clock.svg" class="w-6 h-6" />
                 <span class="text-[#494949]"> تاریخچه جستجوهای شما </span>
               </div>
-              <div class=" h-fit flex">
+              <div class="h-fit flex">
                 <a href="/">
                   <img
                     src="./img/icon/delete-icon.svg"
@@ -151,19 +156,19 @@
               </div>
             </div>
             <!-- search history tags -->
-            <div class="searches  w-full h-fit flex gap-2">
+            <div class="searches w-full h-fit flex gap-2">
               <a href="" class="search-tag">بنز S۵۰۰</a>
               <a href="" class="search-tag">DS ۳</a>
               <a href="" class="search-tag">Rolls Royce Cullinan</a>
               <a href="" class="search-tag">پژو ۲۰۶</a>
               <a href="" class="search-tag">Tiggo ۸ Pro</a>
             </div>
-            <div class="flex w-full h-fit  gap-2 mt-[17px]">
-              <img src="./public/img/icon/heart-search.svg" class="w-6 h-6" />
+            <div class="flex w-full h-fit gap-2 mt-[17px]">
+              <img src="./img/icon/heart-search.svg" class="w-6 h-6" />
               <span class="text-[#494949]">جستجوهای پرطرفدار</span>
             </div>
             <!-- popular searches -->
-            <div class=" w-full h-fit flex gap-2">
+            <div class="w-full h-fit flex gap-2">
               <a href="" class="search-tag">Ferrari Roma</a>
               <a href="" class="search-tag">Peugeot 2008</a>
               <a href="" class="search-tag">Audi A8</a>
@@ -202,7 +207,7 @@
           <!-- main page buttons -->
           <div class="flex buttons !my-[28px] !font-[estedad-medium] !gap-3">
             <button
-              class="!text-black !bg-[#FDB713] hover:!bg-yellow-600 transition-all focus:ring-1 focus:ring-yellow-500 !font-bold !rounded-[7px] md:!px-[24px] md:!py-[8px] !px-[12px] !py-[4px] focus:outline-none text-center cursor-pointer flex flex-row items-center gap-2.5 !h-[48px] !text-sm md:!text-base"
+              class="!text-black !bg-[#FDB713] hover:!bg-yellow-600 transition-all focus:ring-1 focus:ring-yellow-500 !font-bold !rounded-[7px] md:!px-[24px] md:!py-[8px] !px-[12px] !py-[0px] focus:outline-none text-center cursor-pointer flex flex-row items-center gap-2.5 !h-[48px] !text-sm md:!text-base"
             >
               <img src="/img/icon/car.svg" alt="" />
               رزرو آسان خودرو
@@ -218,8 +223,263 @@
         </div>
         <!-- Start car rent filter box -->
         <div
-          class="absolute top-[578px] left-1/2 transform -translate-x-1/2 md:w-6/7 w-11/12 h-[150px] md:h-[201px] bg-white !border !border-gray-300 !rounded-[16px] p-[24px] gap-[16px] flex"
-        ></div>
+          class="absolute top-[578px] left-1/2 transform -translate-x-1/2 md:w-6/7 w-12/13 h-[320px] md:h-[335px] lg:h-[201px] bg-white !border !border-gray-300 !rounded-[16px] md:p-[24px] gap-4 flex p-2 flex-col"
+          dir="rtl"
+        >
+          <div class="rentOptions flex flex-row">
+            <!-- Rent options -->
+            <div
+              class="flex lg:gap-2.5 gap-1 text-center lg:flex-wrap text-sm font-[estedad-regular] h-fit w-full"
+            >
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="rentType"
+                  class="hidden peer"
+                  checked
+                />
+                <div
+                  class="peer-checked:bg-[#194BF0] peer-checked:text-white rent-tag"
+                >
+                  اجاره خودرو با راننده
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="rentType" class="hidden peer" />
+                <div
+                  class="peer-checked:bg-[#194BF0] peer-checked:text-white rent-tag"
+                >
+                  اجاره خودرو بی راننده
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="rentType" class="hidden peer" />
+                <div
+                  class="peer-checked:bg-[#194BF0] peer-checked:text-white rent-tag"
+                >
+                  اجاره ماشین عروس
+                </div>
+              </label>
+            </div>
+            <div class="justify-end w-full hidden lg:flex">
+              <div
+                class="hidden lg:block font-[estedad-regular] mt-2 text-center"
+              >
+                <a href="#" class="text-[#194BF0] text-[10px] lg:text-sm">
+                  اطلاعات بیشتر در مورد رزرو خودرو
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Reserve titles -->
+          <div
+            class="reserve flex flex-row lg:justify-evenly md:justify-evenly w-full lg:h-[25px]"
+          >
+            <div
+              class="reserve-right lg:w-1/5 w-fit flex justify-start items-center gap-1"
+            >
+              <img
+                src="./img/icon/arrow-left-mini.svg"
+                class="lg:w-4 lg:h-4 w-3 h-3.5"
+              />
+              <span class="rent-title text-xs lg:text-sm">محل تحویل خودرو</span>
+            </div>
+            <!-- select-place for mobile -->
+            <div
+              class="select-place flex lg:hidden justify-between relative items-center border rounded-xl border-[#D7D7D7] p-3 mr-auto"
+            >
+              <select
+                class="appearance-none text-xs focus:outline-none text-[#0C0C0C] font-[estedad-regular]"
+              >
+                <option>تهران - فرودگاه امام خمینی</option>
+                <option>تهران - ترمینال غرب</option>
+                <option>تهران - ترمینال جنوب</option>
+                <option>تهران - ترمینال شرق</option>
+                <option>تهران - ترمینال بیهقی</option>
+                <option>تهران - نمایندگی شمال تهران</option>
+                <option>تهران - نمایندگی شرق تهران</option>
+                <option>اصفهان - فرودگاه شهید بهشتی</option>
+                <option>شیراز - فرودگاه شهید دستغیب</option>
+                <option>اصفهان - نمایندگی اصفهان</option>
+                <option>شیراز - نمایندگی شیراز</option>
+              </select>
+              <img src="./img/icon/arrow-down.svg" alt="" class="w-3 h-3" />
+            </div>
+            <!-- end select-place mobile -->
+            <div
+              class="reserve-left hidden w-4/5 lg:flex items-center justify-center-safe gap-1"
+            >
+              <div class="flex-center">
+                <img
+                  src="./img/icon/arrow-left-mini.svg"
+                  class="lg:w-4 lg:h-4 w-3 h-3 lg:mr-10 mr-9"
+                />
+                <span class="rent-title">تاریخ تحویل</span>
+              </div>
+              <div class="flex-center">
+                <img
+                  src="./img/icon/arrow-left-mini.svg"
+                  class="lg:w-4 lg:h-4 w-3 h-3 lg:mr-9"
+                />
+                <span class="rent-title">ساعت تحویل</span>
+              </div>
+              <div class="flex-center">
+                <img
+                  src="./img/icon/arrow-left-mini.svg"
+                  class="lg:w-4 lg:h-4 w-3 h-3 lg:mr-9"
+                />
+                <span class="rent-title">تاریخ بازگشت</span>
+              </div>
+              <div class="flex-center">
+                <img
+                  src="./img/icon/arrow-left-mini.svg"
+                  class="lg:w-4 lg:h-4 w-3 h-3 lg:mr-9"
+                />
+                <span class="rent-title">ساعت بازگشت</span>
+              </div>
+            </div>
+          </div>
+          <!--Start Reserve inputs for Desktop -->
+          <div
+            class="relative hidden lg:flex flex-row border border-[#F3F3F3] rounded-2xl lg:px-3.5 lg:py-2 lg:h-12"
+          >
+            <div
+              class="select-place flex justify-between w-2/5 relative items-center border-l border-[#D7D7D7] p-2"
+            >
+              <select
+                class="appearance-none text-sm focus:outline-none text-[#0C0C0C] font-[estedad-regular] w-full"
+              >
+                <option>تهران - فرودگاه امام خمینی</option>
+                <option>تهران - ترمینال غرب</option>
+                <option>تهران - ترمینال جنوب</option>
+                <option>تهران - ترمینال شرق</option>
+                <option>تهران - ترمینال بیهقی</option>
+                <option>تهران - نمایندگی شمال تهران</option>
+                <option>تهران - نمایندگی شرق تهران</option>
+                <option>اصفهان - فرودگاه شهید بهشتی</option>
+                <option>شیراز - فرودگاه شهید دستغیب</option>
+                <option>اصفهان - نمایندگی اصفهان</option>
+                <option>شیراز - نمایندگی شیراز</option>
+              </select>
+              <img src="./img/icon/arrow-down.svg" alt="" class="w-5 h-5" />
+            </div>
+            <!-- date and time pickers -->
+            <div
+              class="relative flex justify-between items-center w-[130px] border-l border-[#D7D7D7] gap-3 px-2.5 mt"
+            >
+              <input type="text" id="my-datepicker" class="input-style" />
+              <img
+                src="./img/icon/calendar.svg"
+                alt="calendar"
+                class="absolute left-2 w-5 h-5 cursor-pointer"
+              />
+            </div>
+            <div
+              class="relative flex justify-between items-center w-[125px] border-l border-[#D7D7D7] gap-3 px-3"
+            >
+              <input id="only-time-picker" type="text" class="input-style" />
+              <img
+                src="./img/icon/clock.svg"
+                alt="clock"
+                class="absolute left-2 w-5 h-5 cursor-pointer"
+              />
+            </div>
+            <div
+              class="relative flex justify-between items-center w-[135px] border-l border-[#D7D7D7] gap-3 px-2.5"
+            >
+              <input type="text" id="my-datepicker-2" class="input-style" />
+              <img
+                src="./img/icon/calendar.svg"
+                alt="calendar"
+                class="absolute left-2 w-5 h-5 cursor-pointer"
+              />
+            </div>
+            <div
+              class="relative flex justify-between items-center w-[125px] gap-3 px-3 border-l border-[#D7D7D7]"
+            >
+              <input id="only-time-picker-2" type="text" class="input-style" />
+              <img
+                src="./img/icon/clock.svg"
+                alt="clock"
+                class="absolute left-2 w-5 h-5 cursor-pointer"
+              />
+            </div>
+            <!-- search frame -->
+            <div
+              class="absolute flex w-12 h-full bg-[#FDB713] items-center justify-center left-0 -z-0 top-1/2 -translate-y-1/2 rounded-2xl cursor-pointer"
+            >
+              <a href="/">
+                <img src="./img/icon/search-normal.svg" class="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+          <!--Start Reserve inputs for mobile -->
+          <hr class="h-px my-2 bg-gray-200 border-0 lg:hidden block" />
+          <div
+            class="flex md:flex-row flex-col md:flex-wrap gap-3.5 border border-[#f3f3f3] rounded-xl lg:hidden p-3 bg-[#f3f3f3] items-center justify-center"
+          >
+            <div
+              class="container flex lg:hidden items-center gap-0.5 md:justify-evenly"
+            >
+              <div class="flex lg:hidden items-center gap-0.5">
+                <img src="./img/icon/arrow-left-mini.svg" class="w-3 h-3" />
+                <span class="rent-title ml-1 text-center">تاریخ تحویل:</span>
+                <input
+                  type="text"
+                  id="mobile-datepicker"
+                  class="input-style border border-[#D7D7D7] rounded-xl p-2 text-center"
+                />
+              </div>
+              <div class="flex lg:hidden items-center gap-0.5">
+                <span class="rent-title ml-1 mr-1 text-center"
+                  >ساعت تحویل:</span
+                >
+                <input
+                  type="text"
+                  id="mobile-time-picker"
+                  class="input-style border border-[#D7D7D7] rounded-xl p-2 text-center"
+                />
+              </div>
+            </div>
+            <div
+              class="container flex lg:hidden items-center gap-0.5 md:justify-evenly overflow-x-hidden"
+            >
+              <div class="flex lg:hidden items-center gap-0.5">
+                <img src="./img/icon/arrow-left-mini.svg" class="w-3 h-3" />
+                <span class="rent-title ml-1 text-center">تاریخ برگشت:</span>
+                <input
+                  type="text"
+                  id="mobile-datepicker"
+                  class="input-style border border-[#D7D7D7] rounded-xl p-2 text-center"
+                />
+              </div>
+              <div class="flex lg:hidden items-center gap-0.5">
+                <span class="rent-title ml-1 mr-1 text-center"
+                  >ساعت برگشت:</span
+                >
+                <input
+                  type="text"
+                  id="mobile-time-picker"
+                  class="input-style border border-[#D7D7D7] rounded-xl p-2 text-center"
+                />
+              </div>
+            </div>
+            <!-- End div container -->
+          </div>
+          <!-- End Reserve inputs for mobile -->
+          <!--Reserve button for mobile -->
+          <a href="/" class="">
+            <div
+              class="flex lg:hidden w-24 h-8 justify-center m-auto rounded-lg px-3.5 py-2 gap-2 md:gap-1.5 bg-[#FDB713] hover:bg-[#D79C10] items-center"
+            >
+              <img src="./public/img/icon/search-normal.svg" class="w-4 h-4" />
+              <span class="text-black text-xs font-[estedad-medium]">
+               جستجو
+              </span>
+            </div>
+          </a>
+        </div>
+        <!-- End absolute filter box -->
       </div>
       <!-- close relative wrapper for key absolute position elements -->
     </div>

@@ -1,0 +1,27 @@
+/* استایل کلی تقویم */
+.pwt-datepicker {
+  font-family: 'estedad-regular', sans-serif; /* فونت دلخواهت */
+  font-size: 10px;
+}
+
+/* سلکتور تاریخ انتخاب‌شده */
+.pwt-datepicker td.pwt-selected {
+  background-color: #F3F3F3 !important;
+  color: #353535 !important;
+  border: none !important;
+}
+
+/* تاریخ‌های قابل انتخاب */
+.pwt-datepicker td span {
+  background-color: #F3F3F3;
+  color: #353535;
+  border: none;
+  font-size: 10px;
+  font-family: 'estedad-regular';
+}
+
+/* حذف border کلی تقویم */
+.pwt-datepicker-container {
+  border: none !important;
+  box-shadow: none !important;
+}
