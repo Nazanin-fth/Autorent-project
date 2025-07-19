@@ -4,7 +4,7 @@ const searchBox = document.getElementById("searchBox");
 const loginButton = document.getElementById("loginButton");
 const menu = document.querySelector(".menu");
 const logo = document.querySelector(".header-logo");
-
+//Desktop Search funcs
 function openSearch() {
   document.body.classList.add("search-open");
   overlay.classList.remove("hidden");
@@ -90,7 +90,7 @@ $(document).ready(function () {
 // Time Picker script
 $(document).ready(function () {
   $(
-    "#only-time-picker, #only-time-picker-2, #mobile-time-picker"
+    "#only-time-picker, #only-time-picker-2, #mobile-time-picker, #mobile-time-picker-2"
   ).persianDatepicker({
     format: "HH:mm",
     initialValue: true,
@@ -111,7 +111,46 @@ $(document).ready(function () {
     onShow: setDatepickerFont,
   });
 });
-// Reapply datepicker font on navigation buttons click
-$(document).on("click", ".pwt-btn-next, .pwt-btn-prev", function () {
-  setTimeout(setDatepickerFont, 50);
+// Reapply datepicker styles on navigation buttons click
+$(document).on(
+  "click",
+  ".pwt-btn-next, .pwt-btn-prev, .pwt-btn-today",
+  function () {
+    setTimeout(setDatepickerFont, 50);
+  }
+);
+// Swiper Initialization
+var swiper = new Swiper(".myBrandSwiper", {
+  slidesPerView: 5,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+// Car styles desktop
+
+document.querySelectorAll(".card-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    document.querySelectorAll(".orange-bar").forEach((bar) => {
+      bar.style.height = "8px";
+    });
+    const bar = this.parentElement.querySelector(".orange-bar");
+    bar.style.height = "39px";
+  });
+});
+// Car styles mobile
+document.querySelectorAll(".card-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    document.querySelectorAll(".orange-bar-mobile").forEach((bar) => {
+      bar.style.height = "5px";
+    });
+    const bar = this.parentElement.querySelector(".orange-bar-mobile");
+    bar.style.height = "14px";
+  });
 });

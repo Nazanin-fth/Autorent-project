@@ -2,24 +2,70 @@
 
 @font-face {
   font-family: "estedad-medium";
-  src: url("/font/ttf/FD/Estedad-FD-Medium.ttf");
+  src: url("/public/font/ttf/FD/Estedad-FD-Medium.ttf");
 }
 @font-face {
   font-family: "estedad-regular";
-  src: url("/font/ttf/FD/Estedad-FD-Regular.ttf");
+  src: url("/public/font/ttf/FD/Estedad-FD-Regular.ttf");
 }
 @font-face {
   font-family: "estedad-light";
-  src: url("/font/ttf/FD/Estedad-FD-Light.ttf");
+  src: url("/public/font/ttf/FD/Estedad-FD-Light.ttf");
 }
 @font-face {
   font-family: "estedad-bold";
-  src: url("/font/ttf/FD/Estedad-FD-Bold.ttf");
+  src: url("/public/font/ttf/FD/Estedad-FD-Bold.ttf");
+}
+@font-face {
+  font-family: "estedad-extralight";
+  src: url("/public/font/ttf/FD/Estedad-FD-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "estedad-extrabold";
+  src: url("/public/font/ttf/FD/Estedad-FD-ExtraBold.ttf");
 }
 
 body.search-open .menu {
   display: none !important;
 }
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 1024px) {
+  .swiper {
+    display: none !important;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #9a9a9a;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 15px;
+  color: #494949;
+}
+
 @layer components {
   .search-tag {
     @apply h-10 rounded-[32px] border border-[#F3F3F3] px-[10px] py-[6px] flex items-center justify-center gap-2 text-[#5E5E5E] text-sm font-[estedad-regular];
@@ -37,7 +83,26 @@ body.search-open .menu {
   .input-style {
     @apply lg:px-1 py-1 rounded lg:text-sm text-[#212121] font-[estedad-regular] focus:outline-none text-xs;
   }
+  .card-style {
+    @apply lg:w-[312px] lg:h-[186px] w-[344px] h-[160px] md:h-[125px] bg-white rounded-[16px] border border-[#E5E5E5] lg:py-4 lg:px-6 shadow-md flex flex-col items-center gap-2 py-1 px-1.5;
+  }
+  .card-title {
+    @apply text-[#414141] text-center font-[estedad-bold] lg:text-base text-xs;
+  }
+  .card-text {
+    @apply text-[#757575] lg:text-xs text-[10px] font-[estedad-regular] text-center lg:leading-[1.8] leading-[1.6];
+  }
+  .button-title {
+    @apply text-[#353535] text-center font-[estedad-bold] lg:text-2xl text-xs mt-2;
+  }
+  .tab-button{
+    @apply lg:w-[128px] lg:h-[48px] lg:px-4 md:w-24 md:px-1 py-1 px-3.5 h-9 w-16 border border-[#194BF0] rounded-lg lg:text-[14px] text-xs font-[estedad-medium] text-[#194BF0] flex items-center justify-center lg:gap-2 text-center hover:!bg-[#194BF0] hover:!text-white transition-colors duration-200 cursor-pointer
+  }
 }
 .pwt-datepicker-input-element {
   width: 100px;
 }
+.orange-bar {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
