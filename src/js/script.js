@@ -154,3 +154,37 @@ document.querySelectorAll(".card-btn").forEach((btn) => {
     bar.style.height = "14px";
   });
 });
+// Comment Section
+document.querySelectorAll(".comment-item").forEach((btn, idx) => {
+  // Default: the first comment is selected
+  if (idx === 0) {
+    btn.classList.add("comment-selected");
+    btn.classList.add("!bg-[#FDB713]");
+  } else {
+    btn.classList.remove("!bg-[#FDB713]");
+  }
+  btn.addEventListener("click", function () {
+    document.querySelectorAll(".comment-item").forEach((b) => {
+      b.classList.remove("comment-selected");
+      b.classList.remove("!bg-[#FDB713]");
+    });
+    // Add selected class and yellow background to the clicked comment
+    this.classList.add("comment-selected");
+    this.classList.add("!bg-[#FDB713]");
+    // Data for main comment
+    document.getElementById("main-avatar").src = this.dataset.avatar;
+    document.getElementById("main-name").textContent = this.dataset.name;
+    // Stars
+    let stars = "";
+    for (let i = 1; i <= 5; i++) {
+      stars += `<img src="${
+        i <= this.dataset.stars
+          ? "./public/img/icon/star.svg"
+          : "./public/img/icon/empty-star.svg"
+      }" class="w-6 h-6" />`;
+    }
+    document.getElementById("main-stars").innerHTML = stars;
+    document.getElementById("main-text").textContent = this.dataset.text;
+  });
+});
+// Newsletter email validation

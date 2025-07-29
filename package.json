@@ -10,6 +10,7 @@
     "tailwind": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "devDependencies": {
+    "daisyui": "^5.0.46",
     "vite": "^6.3.5"
   },
   "dependencies": {

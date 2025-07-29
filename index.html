@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-[#F3F3F3]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,7 @@
     />
     <link href="./src/css/output.css" rel="stylesheet" />
   </head>
-  <body class="bg-[#F3F3F3] h-[9000px]">
+  <body class="bg-[#F3F3F3] h-full">
     <!-- start website -->
     <div class="main w-screen h-fit">
       <div class="relative bg-gray-900 text-white h-[683px] w-full">
@@ -89,7 +89,9 @@
             />
           </div>
           <!-- desktop menu -->
-          <div class="menu hidden lg:flex space-x-6 gap-10 text-center">
+          <div
+            class="menu hidden lg:flex flex-row space-x-6 gap-10 text-center"
+          >
             <a
               href="#"
               class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
@@ -144,7 +146,7 @@
               />
             </div>
             <!-- search history -->
-            <div class="w-full h-fit flex flex-row gap-0.5 justify-between">
+            <div class="w-full h-fit flex flex-row gap-1 justify-between">
               <div class="flex w-full h-fit gap-2">
                 <img src="./img/icon/history-clock.svg" class="w-6 h-6" />
                 <span class="text-[#494949]"> تاریخچه جستجوهای شما </span>
@@ -423,7 +425,7 @@
             class="flex md:flex-row flex-col md:flex-wrap gap-3.5 border border-[#f3f3f3] rounded-xl lg:hidden p-3 bg-[#f3f3f3] items-center justify-center"
           >
             <div
-              class="container flex lg:hidden items-center gap-0.5 md:justify-evenly"
+              class="container flex lg:hidden items-center gap-1 md:justify-evenly"
             >
               <div class="flex lg:hidden items-center gap-0.5">
                 <img src="./img/icon/arrow-left-mini.svg" class="w-3 h-3" />
@@ -485,7 +487,7 @@
         </div>
         <!-- End absolute filter box -->
         <!-- brands logos -->
-        <div class="relative w-full lg:mt-[730px] mt-[900px]">
+        <div class="relative w-full lg:mt-[730px] mt-[900px] bg-[#F3F3F3]">
           <!-- desktop brands -->
           <div class="flex-center">
             <div
@@ -658,7 +660,7 @@
                     class="lg:w-[72px] w-9 h-9 lg:h-[72px]"
                   />
                   <h3 class="card-title">تحویل در محل</h3>
-                  <p class="card-text mt-2.5 lg:m-0 md:m-0">
+                  <p class="card-text lg:m-0 md:m-0">
                     تحویل خودرو در زمان و مکان تعیین شده توسط شما خواهد بود.
                   </p>
                 </div>
@@ -679,7 +681,7 @@
                     class="lg:w-[72px] w-9 h-9 lg:h-[72px]"
                   />
                   <h3 class="card-title">قیمت مناسب</h3>
-                  <p class="card-text mt-2.5 lg:m-0 md:m-0">
+                  <p class="card-text lg:m-0 md:m-0">
                     هدف ما، ارائه بهترین خدمات با مناسب ترین قیمت ممکن است.
                   </p>
                 </div>
@@ -921,7 +923,7 @@
             <button class="tab-button">اقتصادی</button>
             <a
               href="/"
-              class="absolute text-center lg:text-lg text-[14px] text-[#194BF0] lg:flex-center left-0 font-[estedad-medium] hidden hover:underline transition-all duration-150"
+              class="hidden lg:flex absolute text-center lg:text-lg text-[14px] text-[#194BF0] flex-center left-0 font-[estedad-medium]hover:underline transition-all duration-150"
               >مشاهده همه
               <img
                 src="./public/img/icon/arrow-left-blue.svg"
@@ -930,10 +932,13 @@
             </a>
           </div>
           <!-- Mobile tab link -->
-          <div class="flex-center gap-2 mt-3 w-12/13 lg:hidden m-auto" dir="rtl">
+          <div
+            class="flex-center gap-2 mt-4 w-12/13 lg:hidden m-auto"
+            dir="rtl"
+          >
             <a
               href="/"
-              class="text-center text-[10px] text-[#194BF0] flex-center left-0 font-[estedad-medium] lg:hidden transition-all duration-150"
+              class="text-center text-[10px] md:text-[14px] text-[#194BF0] flex-center left-0 font-[estedad-medium] lg:hidden transition-all duration-150"
               >مشاهده همه
               <img
                 src="./public/img/icon/arrow-left-blue.svg"
@@ -942,10 +947,1035 @@
             </a>
           </div>
           <!-- Start grid -->
-          
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 w-[97%] max-w-[1200px] mx-auto justify-items-center p-1"
+          >
+            <div class="grid-card">
+              <div class="relative mb-2" dir="rtl">
+                <img
+                  src="./public/img/grid/genesis.jpg"
+                  alt="car"
+                  class="grid-pic"
+                />
+                <div class="grid-discount">٪۲۰</div>
+              </div>
+              <div class="grid-title">اجاره جنسیس کوپه</div>
+              <div class="grid-text">
+                :مدل
+                <p>۲۰۱۶</p>
+              </div>
+              <!-- price -->
+              <div
+                class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+              >
+                <div class="grid-price">
+                  <span class="grid-span">قیمت روزانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+                <div class="grid-price">
+                  <span class="grid-span">قیمت ماهانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+              >
+                <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+                <span class="font-[estedad-bold]">80 میلیون تومان</span>
+              </div>
+              <button class="grid-button">درخواست رزرو</button>
+            </div>
+            <div class="grid-card">
+              <div class="relative mb-2" dir="rtl">
+                <img
+                  src="./public/img/grid/Toyota.jpg"
+                  alt="car"
+                  class="grid-pic"
+                />
+              </div>
+              <div class="grid-title">اجاره تویوتا لندکروزر 2013</div>
+              <div class="grid-text">
+                :مدل
+                <p>۲۰۱۶</p>
+              </div>
+              <!-- price -->
+              <div
+                class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+              >
+                <div class="grid-price">
+                  <span class="grid-span">قیمت روزانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+                <div class="grid-price">
+                  <span class="grid-span">قیمت ماهانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+              >
+                <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+                <span class="font-[estedad-bold]">80 میلیون تومان</span>
+              </div>
+              <button class="grid-button">درخواست رزرو</button>
+            </div>
+            <div class="grid-card">
+              <div class="relative mb-2" dir="rtl">
+                <img
+                  src="./public/img/grid/sedan-m.jpg"
+                  alt="car"
+                  class="grid-pic"
+                />
+                <div class="grid-discount">٪۲۰</div>
+              </div>
+              <div class="grid-title">سدان E350 اجاره بنز</div>
+              <div class="grid-text">
+                :مدل
+                <p>۲۰۱۶</p>
+              </div>
+              <!-- price -->
+              <div
+                class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+              >
+                <div class="grid-price">
+                  <span class="grid-span">قیمت روزانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+                <div class="grid-price">
+                  <span class="grid-span">قیمت ماهانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+              >
+                <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+                <span class="font-[estedad-bold]">80 میلیون تومان</span>
+              </div>
+              <button class="grid-button">درخواست رزرو</button>
+            </div>
+            <div class="grid-card">
+              <div class="relative mb-2" dir="rtl">
+                <img
+                  src="./public/img/grid/maserati.jpg"
+                  alt="car"
+                  class="grid-pic"
+                />
+              </div>
+              <div class="grid-title">اجاره مازراتی گرن توریسمو</div>
+              <div class="grid-text">
+                :مدل
+                <p>۲۰۱۲</p>
+              </div>
+              <!-- price -->
+              <div
+                class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+              >
+                <div class="grid-price">
+                  <span class="grid-span">قیمت روزانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+                <div class="grid-price">
+                  <span class="grid-span">قیمت ماهانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+              >
+                <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+                <span class="font-[estedad-bold]">800 میلیون تومان</span>
+              </div>
+              <button class="grid-button">درخواست رزرو</button>
+            </div>
+            <div class="grid-card">
+              <div class="relative mb-2" dir="rtl">
+                <img
+                  src="./public/img/grid/Tucson.jpg"
+                  alt="car"
+                  class="grid-pic"
+                />
+                <div class="grid-discount">٪۲۰</div>
+              </div>
+              <div class="grid-title">اجاره هیوندای توسان 2014</div>
+              <div class="grid-text">
+                :مدل
+                <p>۲۰۱۴</p>
+              </div>
+              <!-- price -->
+              <div
+                class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+              >
+                <div class="grid-price">
+                  <span class="grid-span">قیمت روزانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+                <div class="grid-price">
+                  <span class="grid-span">قیمت ماهانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+              >
+                <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+                <span class="font-[estedad-bold]">80 میلیون تومان</span>
+              </div>
+              <button class="grid-button">درخواست رزرو</button>
+            </div>
+            <div class="grid-card">
+              <div class="relative mb-2" dir="rtl">
+                <img
+                  src="./public/img/grid/bmw-528.jpg"
+                  alt="car"
+                  class="grid-pic"
+                />
+              </div>
+              <div class="grid-title">اجاره بی ام و 528</div>
+              <div class="grid-text">
+                :مدل
+                <p>۲۰۱۶</p>
+              </div>
+              <!-- price -->
+              <div
+                class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+              >
+                <div class="grid-price">
+                  <span class="grid-span">قیمت روزانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+                <div class="grid-price">
+                  <span class="grid-span">قیمت ماهانه</span>
+                  <span class="grid-cost">8,500,000</span>
+                  <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+              >
+                <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+                <span class="font-[estedad-bold]">80 میلیون تومان</span>
+              </div>
+              <button class="grid-button">درخواست رزرو</button>
+            </div>
+          </div>
+          <!-- End grid -->
+          <!-- Middle paragraph 2 -->
+          <div
+            class="text-[#5E5E5E] text-center font-[estedad-regular] lg:text-2xl md:text-xl mt-12 flex flex-col lg:gap-3 md:gap-2.5 gap-1 mb-2 lg:mb-0 md:mb-0"
+          >
+            <span>چگونه در وبسایت</span>
+            <div
+              dir="rtl"
+              class="text-center flex lg:gap-2.5 gap-1 md:gap-2 justify-center lg:mt-1.5 mt-0"
+            >
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#D79C10]"
+              >
+                اُتـــورِنت،
+              </p>
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#353535]"
+              >
+                خودرو رزرو کنیم؟
+              </p>
+            </div>
+          </div>
+          <!-- Car Reservation Steps -->
+          <div
+            class="relative flex justify-center mt-[90px] w-full lg:h-[900px] md:h-auto h-[400px] max-w-[1600px] mx-auto"
+          >
+            <div class="relative z-10 flex justify-center">
+              <img
+                src="./public/img/cars/blue-car.png"
+                class="lg:w-[392px] lg:h-auto md:h-[440px] md:w-[170px] h-[340px] w-[150px] hidden lg:block md:block"
+                alt="blue-car"
+              />
+            </div>
+            <img
+              src="./public/img/frame/1.svg"
+              class="absolute lg:right-30 lg:w-auto lg:h-auto md:w-[36px] md:h-[50px] lg:top-1 md:-top-10 md:right-14 -top-17 right-[31.6%] h-10 w-10"
+            />
+            <img
+              src="./public/img/frame/3.svg"
+              class="absolute lg:right-15 lg:w-auto lg:h-auto md:w-[40px] md:h-[58px] lg:bottom-5/12 md:bottom-28 md:right-11 h-10 w-10 right-[30.1%] bottom-48"
+            />
+            <img
+              src="./public/img/frame/2.svg"
+              class="absolute lg:left-11.5 lg:w-auto lg:h-auto md:w-[36px] md:h-[50px] lg:top-1 md:-top-10 md:left-3 top-13 left-[31.6%] h-10 w-10"
+            />
+            <img
+              src="./public/img/frame/4.svg"
+              class="absolute lg:left-11.5 lg:w-auto lg:h-auto md:w-[36px] md:h-[50px] lg:bottom-5/12 md:bottom-28 md:left-3 bottom-17 left-[31.7%] h-10 w-10"
+            />
+            <div
+              class="transparent-card lg:right-16 lg:top-1/12 md:right-5 md:-top-4 -top-15 right-1/3"
+            >
+              <div
+                class="text flex gap-2 flex-col justify-items-start justify-start"
+              >
+                <div
+                  class="flex flex-row-reverse text-center lg:gap-1.5 md:gap-1 gap-1 lg:text-2xl md:text-xl font-[estedad-bold] text-base"
+                >
+                  <p class="text-[#D79C10]">خودروی</p>
+                  <p class="text-[#212121]">.خود را انتخاب کنید</p>
+                </div>
+                <p
+                  class="text-right font-[estedad-medium] text-[#5E5E5E] lg:text-base/8 md:text-sm/7 lg:w-[258px] md:w-[235px] w-[190px] text-xs/6"
+                >
+                  خودروی مورد نظر خود را، متناسب با درخواست خود انتخاب کنید
+                </p>
+              </div>
+              <div>
+                <img
+                  src="./public/img/frame/t1.svg"
+                  class="lg:w-20 lg:h-20 md:w-14 md:h-14 w-8 h-8"
+                />
+              </div>
+            </div>
+            <div
+              class="transparent-card lg:right-16 lg:bottom-1/3 md:right-5 md:bottom-10 right-1/3 bottom-32"
+            >
+              <div
+                class="text flex gap-2 flex-col justify-items-start justify-start"
+              >
+                <div
+                  class="flex flex-row-reverse text-center lg:gap-1.5 md:gap-1 gap-1 lg:text-2xl md:text-xl font-[estedad-bold] text-base"
+                >
+                  <p class="text-[#D79C10]">هزینه</p>
+                  <p class="text-[#212121]">.اجاره را پرداخت کنید</p>
+                </div>
+                <p
+                  class="text-right font-[estedad-medium] text-[#5E5E5E] lg:text-base/8 md:text-sm/7 lg:w-[258px] md:w-[235px] w-[190px] text-xs/6"
+                >
+                  می توانید از طریق کیف پول آنلاین یا کارت های عضو شبکه شتاب
+                  هزینه اجاره را پرداخت کنید
+                </p>
+              </div>
+              <div>
+                <img
+                  src="./public/img/frame/t3.svg"
+                  class="lg:w-20 lg:h-20 md:w-14 md:h-14 w-8 h-8"
+                />
+              </div>
+            </div>
+            <div
+              class="transparent-card lg:left-16 lg:top-1/12 md:left-5 md:-top-4 top-15 left-1/3"
+            >
+              <div>
+                <img
+                  src="./public/img/frame/t2.svg"
+                  class="lg:w-20 lg:h-20 md:w-14 md:h-14 w-8 h-8 lg:block md:block"
+                />
+              </div>
+              <div
+                class="text flex gap-2 flex-col justify-items-start justify-start"
+              >
+                <div
+                  class="flex flex-row-reverse text-center lg:gap-1.5 md:gap-1 gap-1 lg:text-2xl md:text-xl font-[estedad-bold] text-base"
+                >
+                  <p class="text-[#D79C10]">تاریخ</p>
+                  <p class="text-[#212121]">.تحویل را تعیین کنید</p>
+                </div>
+                <p
+                  class="text-right font-[estedad-medium] text-[#5E5E5E] lg:text-base/8 md:text-sm/7 lg:w-[258px] md:w-[235px] w-[190px] text-xs/6"
+                >
+                  تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید
+                </p>
+              </div>
+            </div>
+            <div
+              class="transparent-card lg:left-16 lg:bottom-1/3 md:left-5 md:bottom-12 left-1/3 bottom-4"
+            >
+              <div>
+                <img
+                  src="./public/img/frame/t4.svg"
+                  class="lg:w-20 lg:h-20 md:w-14 md:h-14 w-8 h-8"
+                />
+              </div>
+              <div
+                class="text flex gap-2 flex-col justify-items-start justify-start"
+              >
+                <div
+                  class="flex flex-row-reverse text-center lg:gap-1.5 md:gap-1 gap-1 lg:text-2xl md:text-xl font-[estedad-bold] text-base"
+                >
+                  <p class="text-[#D79C10]">خودرو</p>
+                  <p class="text-[#212121]">.را دریافت کنید</p>
+                </div>
+                <p
+                  class="text-right font-[estedad-medium] text-[#5E5E5E] lg:text-base/8 md:text-sm/7 lg:w-[258px] md:w-[235px] w-[190px] text-xs/6"
+                >
+                  در زمان و مکان تعیین شده، خودروی خود را دریافت کنید
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--ِEnd Car Reservation Steps -->
+          <!-- Middle paragraph 3 -->
+          <div
+            class="text-[#5E5E5E] text-center font-[estedad-regular] lg:text-2xl md:text-xl mt-20 flex flex-col lg:gap-3 md:gap-2.5 gap-1 mb-8 lg:mb-6 md:mb-8 lg:mt-14"
+          >
+            <span>پر تکرارترین سؤالاتی که پرسیدید</span>
+            <div
+              dir="rtl"
+              class="text-center flex lg:gap-2.5 gap-1 md:gap-2 justify-center lg:mt-1.5 mt-0"
+            >
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#353535]"
+              >
+                سؤالات
+              </p>
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#D79C10]"
+              >
+                متداول
+              </p>
+            </div>
+          </div>
+          <!-- Start Accordion -->
+          <div class="flex w-6/7 m-auto gap-4 max-w-[1800px] md:gap-5">
+            <img
+              src="./public/img/frame/accordion-3.jpg"
+              class="rounded-2xl lg:w-[392px] lg:h-[459px] object-contain object-center my-auto md:w-[290px] md:h-full hidden lg:block md:hidden"
+            />
+            <div class="flex flex-col gap-4 w-full">
+              <div
+                dir="rtl"
+                class="collapse collapse-plus rounded-2xl bg-white border border-[#D7D7D7] text-[#353535] lg:py-3.5 lg:px-4 p-2"
+              >
+                <input type="radio" name="my-accordion-3" />
+                <div
+                  class="collapse-title text-xs md:text-[14px] lg:text-base font-[estedad-medium] leading-[180%]"
+                >
+                  در صورت بروز نقص فنی برای خودرو چه اتفاقی می افتد؟
+                </div>
+                <div
+                  class="collapse-content font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[12px] leading-[180%] text-[#727272]"
+                >
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و
+                  مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                  تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                  کاربردی می باشدو
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="collapse collapse-plus rounded-2xl bg-white border border-[#D7D7D7] text-[#353535] lg:py-3.5 lg:px-4 p-2"
+              >
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div
+                  class="collapse-title text-xs md:text-[14px] lg:text-base font-[estedad-medium] leading-[180%]"
+                >
+                  هزینه بنزین و کارواش در خودروهای اجاره ای به عهده کیست؟
+                </div>
+                <div
+                  class="collapse-content font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[12px] leading-[180%] text-[#727272]"
+                >
+                  در زمان اجاره خودرو بدون راننده خودروها کارواش شده و با باک
+                  بنزین پر تحویل مشتریان عزیز می گردد. در زمان استرداد خودرو در
+                  صورتی که خودرو به کارواش نیاز داشته و یا خودرو دارای کسر سوخت
+                  باشد هزینه آن بر عهده مشتری می باشد.
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="collapse collapse-plus rounded-2xl bg-white border border-[#D7D7D7] text-[#353535] lg:py-3.5 lg:px-4 p-2"
+              >
+                <input type="radio" name="my-accordion-3" />
+                <div
+                  class="collapse-title text-xs md:text-[14px] lg:text-base font-[estedad-medium]"
+                >
+                  آیا ماشین های اتورنت دارای بیمه هستند؟
+                </div>
+                <div
+                  class="collapse-content font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[12px] leading-[180%] text-[#727272]"
+                >
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و
+                  مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                  تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
+                  کاربردی می باشد و
+                </div>
+              </div>
+              <div
+                dir="rtl"
+                class="collapse collapse-plus rounded-2xl bg-white border border-[#D7D7D7] text-[#353535] lg:py-3.5 lg:px-4 p-2"
+              >
+                <input type="radio" name="my-accordion-3" />
+                <div
+                  class="collapse-title text-xs md:text-[14px] lg:text-base font-[estedad-medium]"
+                >
+                  محدودیت کیلومتر در اجاره خودرو چقدر می باشد؟
+                </div>
+                <div
+                  class="collapse-content font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[12px] leading-[180%] text-[#727272]"
+                >
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و
+                  کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و
+                  آینده شناخت فراوان جامعه و متخصصان را می طلبد
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Accordion -->
+          <!-- Middle paragraph 4 -->
+          <div
+            class="text-[#5E5E5E] text-center font-[estedad-regular] lg:text-2xl md:text-xl mt-12 flex flex-col lg:gap-3 md:gap-2.5 gap-1 mb-2 lg:mb-6 md:mb-3 lg:mt-17"
+          >
+            <span>.آنچه مشتریان ما درموردمان گفته‌اند</span>
+            <div
+              dir="rtl"
+              class="text-center flex lg:gap-2.5 gap-1 md:gap-2 justify-center lg:mt-1.5 mt-0"
+            >
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#353535]"
+              >
+                نظرات
+              </p>
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#D79C10]"
+              >
+                مشتریان
+              </p>
+            </div>
+          </div>
+          <!-- Start Comments -->
+          <!-- Main Comment -->
+          <div
+            id="main-comment"
+            class="w-6/7 lg:h-[391px] md:[360px] h-fit bg-white border border-[#D7D7D7] rounded-[16px] flex flex-col items-center pt-4 pb-4 mx-auto lg:max-w-[1225px]"
+          >
+            <!-- User Avatar -->
+            <div class="flex flex-col items-center gap-2">
+              <img
+                id="main-avatar"
+                src="./public/img/user/1.jpg"
+                alt="user"
+                ml-3
+                class="lg:w-[136px] lg:h-[136px] md:w-32 md:h-32 w-20 h-20 rounded-full border-[5px] border-[#194BF0] object-cover"
+              />
+              <div
+                id="main-name"
+                class="font-[estedad-medium] text-[16px] text-center text-[#212121] mt-2"
+              >
+                اولدوز بهاور
+              </div>
+              <!-- Stars -->
+              <div
+                id="main-stars"
+                class="flex justify-center items-center w-[136px] h-[24px] gap-1"
+              >
+                <img src="./public/img/icon/star.svg" class="w-6 h-6" />
+                <img src="./public/img/icon/star.svg" class="w-6 h-6" />
+                <img src="./public/img/icon/star.svg" class="w-6 h-6" />
+                <img src="./public/img/icon/star.svg" class="w-6 h-6" />
+                <img src="./public/img/icon/empty-star.svg" class="w-6 h-6" />
+              </div>
+            </div>
+            <!-- Comment Text -->
+            <div
+              dir="rtl"
+              id="main-text"
+              class="font-[estedad-regular] lg:text-[14px] md:text-[13px] text-xs text-[#727272] text-center leading-[180%] px-8 lg:max-w-[700px] md:max-w-[650px] mt-10 lg:line-clamp-4 line-clamp-6"
+            >
+              اولین بار بود که برای مسافرت ماشین اجاره می‌کردم و به دنبال یک
+              شرکت با سابقه و مطمئن می‌گشتم! <br />بدون هیچ شکی میگم، اتو رنت تو
+              کار خودش بهترینه! <br />
+              پشتیبانی عالی، هزینه بسیار مناسب، آسان بودن روند اجاره و رزرو؛
+              هرچی بگم کم گفتم! <br />حتما دفعه بعد هم برای اجاره ماشین به
+              سراغشون میام
+            </div>
+          </div>
+          <!-- Other Comments -->
+          <div
+            id="comments-list"
+            class="flex flex-row lg:gap-6 md:gap-2 gap-0.5 mt-6 justify-center lg:w-6/7 md:w-6/7 w-1/1 p-0.5 md:p-0 lg:p-0 mx-auto rounded-[16px]"
+            dir="rtl"
+          >
+            <!-- Selected Comment -->
+            <button
+              class="comment-item lg:w-[288px] lg:h-[96px] w-full h-[85px] flex-center bg-white border border-[#D7D7D7] rounded-[16px] flex items-center lg:gap-2 md:gap-2 gap-1 lg:p-4 md:p-2 p-0.25 transition-all duration-200 flex-col md:flex-col md:h-full lg:flex-row"
+              data-avatar="./public/img/user/1.jpg"
+              data-name="اولدوز بهاور"
+              data-stars="4"
+              data-text=" اولین بار بود که برای مسافرت ماشین اجاره می‌کردم و به دنبال یک
+              شرکت با سابقه و مطمئن می‌گشتم! بدون هیچ شکی میگم، اتو رنت تو کار
+              خودش بهترینه! پشتیبانی عالی، هزینه بسیار مناسب، آسان بودن روند
+              اجاره و رزرو؛ هرچی بگم کم گفتم! حتما دفعه بعد هم برای اجاره ماشین
+              به سراغشون میام"
+            >
+              <img
+                src="./public/img/user/1.jpg"
+                class="lg:w-[64px] lg:h-[64px] md:w-[32px] md:h-[32px] md:ml-0 w-[24px] h-[24px] ml-0 lg:ml-3 rounded-full object-cover"
+              />
+              <div
+                class="flex flex-col justify-center lg:items-start md:items-center items-center ml-0 md:ml-0 lg:ml-2 gap-2"
+              >
+                <span
+                  class="font-[estedad-medium] lg:text-[16px] md:text-[13px] text-[#212121] text-center text-[9px]"
+                  >اولدوز بهاور</span
+                >
+                <span
+                  class="font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[#494949] text-center text-[9px]"
+                  >۲۷ دی ماه ۱۳۸۰</span
+                >
+              </div>
+            </button>
+            <!-- Unselected -->
+            <button
+              class="comment-item lg:w-[288px] lg:h-[96px] w-full h-[85px] flex-center bg-white border border-[#D7D7D7] rounded-[16px] flex items-center lg:gap-2 md:gap-2 gap-1 lg:p-4 md:p-2 p-0.25 transition-all duration-200 flex-col md:flex-col md:h-full lg:flex-row"
+              data-avatar="./public/img/user/2.jpg"
+              data-name="محمدجواد امینی"
+              data-stars="5"
+              data-text="خیلی راضی بودم، همه چیز عالی بود"
+            >
+              <img
+                src="./public/img/user/2.jpg"
+                class="lg:w-[64px] lg:h-[64px] md:w-[32px] md:h-[32px] md:ml-0 w-[24px] h-[24px] ml-0 lg:ml-3 rounded-full object-cover"
+              />
+              <div
+                class="flex flex-col justify-center lg:items-start md:items-center items-center ml-0 md:ml-0 lg:ml-2 gap-2"
+              >
+                <span
+                  class="font-[estedad-medium] lg:text-[16px] md:text-[13px] text-[#212121] text-center text-[9px]"
+                  >محمدجواد امینی</span
+                >
+                <span
+                  class="font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[#494949] text-center text-[9px]"
+                  >۲۷ دی ماه ۱۳۸۰</span
+                >
+              </div>
+            </button>
+            <button
+              class="comment-item lg:w-[288px] lg:h-[96px] w-full h-[85px] flex-center bg-white border border-[#D7D7D7] rounded-[16px] flex items-center lg:gap-2 md:gap-2 gap-1 lg:p-4 md:p-2 p-0.25 transition-all duration-200 flex-col md:flex-col md:h-full lg:flex-row"
+              data-avatar="./public/img/user/3.jpg"
+              data-name="فرزانه حیدری"
+              data-stars="3"
+              data-text="تقریبا راضی بودم، ممنون از اتورنت"
+            >
+              <img
+                src="./public/img/user/3.jpg"
+                class="lg:w-[64px] lg:h-[64px] md:w-[32px] md:h-[32px] md:ml-0 w-[24px] h-[24px] ml-0 lg:ml-3 rounded-full object-cover"
+              />
+              <div
+                class="flex flex-col justify-center lg:items-start md:items-center items-center ml-0 md:ml-0 lg:ml-2 gap-2"
+              >
+                <span
+                  class="font-[estedad-medium] lg:text-[16px] md:text-[13px] text-[#212121] text-center text-[9px]"
+                  >فرزانه حیدری</span
+                >
+                <span
+                  class="font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[#494949] text-center text-[9px]"
+                  >۲۷ دی ماه ۱۳۹۹</span
+                >
+              </div>
+            </button>
+            <button
+              class="comment-item lg:w-[288px] lg:h-[96px] w-full h-[85px] flex-center bg-white border border-[#D7D7D7] rounded-[16px] flex items-center lg:gap-2 md:gap-2 gap-1 lg:p-4 md:p-2 p-0.25 transition-all duration-200 flex-col md:flex-col md:h-full lg:flex-row"
+              data-avatar="./public/img/user/4.jpg"
+              data-name="فاطمه ابراهیمی‌فر"
+              data-stars="5"
+              data-text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
+            >
+              <img
+                src="./public/img/user/4.jpg"
+                class="lg:w-[64px] lg:h-[64px] md:w-[32px] md:h-[32px] md:ml-0 w-[24px] h-[24px] ml-0 lg:ml-3 rounded-full object-cover"
+              />
+              <div
+                class="flex flex-col justify-center lg:items-start md:items-center items-center ml-0 md:ml-0 lg:ml-2 gap-2"
+              >
+                <span
+                  class="font-[estedad-medium] lg:text-[16px] md:text-[13px] text-[#212121] text-center text-[9px]"
+                  >فاطمه ابراهیمی‌فر</span
+                >
+                <span
+                  class="font-[estedad-regular] lg:text-[14px] md:text-[12px] text-[#494949] text-center text-[9px]"
+                  >۲۷ دی ماه ۱۳۸۰</span
+                >
+              </div>
+            </button>
+          </div>
+          <!-- End Comments -->
+          <!-- Middle paragraph 5 -->
+          <div
+            class="text-[#5E5E5E] text-center font-[estedad-regular] lg:text-2xl md:text-xl mt-12 flex flex-col lg:gap-3 md:gap-2.5 gap-1 mb-2 lg:mb-6 md:mb-3 lg:mt-17"
+          >
+            <span>مقالات ما</span>
+            <div
+              dir="rtl"
+              class="text-center flex lg:gap-2 gap-1 md:gap-2 justify-center lg:mt-1.5 mt-0"
+            >
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#353535]"
+              >
+                مجله
+              </p>
+              <p
+                class="font-[estedad-bold] lg:text-[32px] md:text-[30px] text-[22px] text-[#D79C10]"
+              >
+                خودرو
+              </p>
+            </div>
+          </div>
+          <!-- Start Articles -->
+          <div
+            dir="rtl"
+            class="flex flex-row gap-6 justify-center flex-wrap lg:w-6/7 md:w-6/7 w-1/1 mx-auto p-1.5 lg:p-0 md:p-0 mb-[80px]"
+          >
+            <div
+              class="lg:max-w-[391px] lg:w-[31%] md:w-[380px] w-1/1 h-[370px] cursor-pointer bg-white border border-[#D7D7D7] rounded-[16px] p-4 flex flex-col items-center gap-2 opacity-100"
+              style="direction: rtl"
+            >
+              <img
+                src="./public/img/blog/lexus.jpg"
+                alt="lexus"
+                class="w-[359px] h-[195px] rounded-[12px] object-cover mb-2"
+              />
+              <div
+                class="w-full text-right font-[estedad-medium] text-[16px] leading-[100%] text-[#414141] mb-1"
+              >
+                روش های مختلف برای اجاره خودرو
+              </div>
+              <div
+                class="w-full text-justify font-[estedad-regular] text-[12px] leading-[180%] text-[#757575] line-clamp-2"
+              >
+                امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به
+                وجود آمده است نیازهای افراد و نحوه دسترسی به آن‌ها نیز دچار
+                تحولی شده...
+              </div>
+              <div
+                dir="rtl"
+                class="w-1/1 h-[25px] flex flex-row items-center gap-4 bg-transparent mt-auto"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    src="./public/img/blog/clock.svg"
+                    class="lg:w-[18px] lg:h-[18px]"
+                  />
+                  <span
+                    class="flex items-center gap-1 text-[#757575] text-xs font-[estedad-regular]"
+                  >
+                    ۳ دقیقه
+                  </span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    src="./public/img/blog/eye.svg"
+                    class="lg:w-[18px] lg:h-[18px]"
+                  />
+
+                  <span class="text-xs text-[#757575] font-[estedad-regular]"
+                    >۱,۳۱۳</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="lg:max-w-[391px] lg:w-[31%] md:w-[380px] w-1/1 h-[370px] cursor-pointer bg-white border border-[#D7D7D7] rounded-[16px] p-4 flex flex-col items-center gap-2 opacity-100"
+              style="direction: rtl"
+            >
+              <img
+                src="./public/img/blog/camaro.jpg"
+                alt="lexus"
+                class="w-[359px] h-[195px] rounded-[12px] object-cover mb-2"
+              />
+              <div
+                class="w-full text-right font-[estedad-medium] text-[16px] leading-[100%] text-[#414141] mb-1"
+              >
+                روش های مختلف برای اجاره خودرو
+              </div>
+              <div
+                class="w-full text-justify font-[estedad-regular] text-[12px] leading-[180%] text-[#757575] line-clamp-2"
+              >
+                امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به
+                وجود آمده است نیازهای افراد و نحوه دسترسی به آن‌ها نیز دچار
+                تحولی شده...
+              </div>
+              <div
+                dir="rtl"
+                class="w-1/1 h-[25px] flex flex-row items-center gap-4 bg-transparent mt-auto"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    src="./public/img/blog/clock.svg"
+                    class="lg:w-[18px] lg:h-[18px]"
+                  />
+                  <span
+                    class="flex items-center gap-1 text-[#757575] text-xs font-[estedad-regular]"
+                  >
+                    ۳ دقیقه
+                  </span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    src="./public/img/blog/eye.svg"
+                    class="lg:w-[18px] lg:h-[18px]"
+                  />
+
+                  <span class="text-xs text-[#757575] font-[estedad-regular]"
+                    >۱,۳۱۳</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="lg:max-w-[391px] lg:w-[31%] md:w-[380px] w-1/1 h-[370px] cursor-pointer bg-white border border-[#D7D7D7] rounded-[16px] p-4 flex flex-col items-center gap-2 opacity-100"
+              style="direction: rtl"
+            >
+              <img
+                src="./public/img/blog/jeep.jpg"
+                alt="lexus"
+                class="w-[359px] h-[195px] rounded-[12px] object-cover mb-2"
+              />
+              <div
+                class="w-full text-right font-[estedad-medium] text-[16px] leading-[100%] text-[#414141] mb-1"
+              >
+                روش های مختلف برای اجاره خودرو
+              </div>
+              <div
+                class="w-full text-justify font-[estedad-regular] text-[12px] leading-[180%] text-[#757575] line-clamp-2"
+              >
+                امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به
+                وجود آمده است نیازهای افراد و نحوه دسترسی به آن‌ها نیز دچار
+                تحولی شده...
+              </div>
+              <div
+                dir="rtl"
+                class="w-1/1 h-[25px] flex flex-row items-center gap-4 bg-transparent mt-auto"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    src="./public/img/blog/clock.svg"
+                    class="lg:w-[18px] lg:h-[18px]"
+                  />
+                  <span
+                    class="flex items-center gap-1 text-[#757575] text-xs font-[estedad-regular]"
+                  >
+                    ۳ دقیقه
+                  </span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    src="./public/img/blog/eye.svg"
+                    class="lg:w-[18px] lg:h-[18px]"
+                  />
+
+                  <span class="text-xs text-[#757575] font-[estedad-regular]"
+                    >۱,۳۱۳</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Start Footer -->
+          <div
+            class="container-footer lg:h-[495px] md:h-[480px] h-[460px] w-full"
+          >
+            <footer
+              class="flex lg:w-6/7 md:w-11/12 w-19/20 m-3 h-fit relative mx-auto bg-[#1E1E1EE8] lg:pb-12 lg:pt-14 lg:px-6 md:p-5 rounded-2xl flex-col mb-[64px] p-2"
+            >
+              <!-- BG -->
+              <div
+                class="absolute inset-0 bg-[url('/public/img/footer/bg.png')] bg-cover bg-center z-0 opacity-10 pointer-events-none"
+              ></div>
+              <!-- Upper Part -->
+              <div class="lg:w-full w-full flex justify-center mb-4 mx-auto">
+                <div
+                  class="w-full h-[101px] rounded-[16px] border border-[#868686] flex items-center lg:justify-between md:justify-normal lg:gap-[81px] gap-4 md:gap-20 lg:px-6 lg:py-4 md:p-2 shadow-[0_0_6px_0_#00000059]"
+                >
+                  <!-- Address -->
+                  <div
+                    class="flex items-center flex-1 lg:gap-6 md:gap-2 justify-center md:justify-normal lg:justify-center gap-1.5"
+                    dir="rtl"
+                  >
+                    <img
+                      src="./public/img/footer/map.svg"
+                      class="lg:w-auto md:w-8 w-4"
+                    />
+                    <div class="flex flex-col items-center gap-2">
+                      <span
+                        class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white mb-1"
+                        >آدرس</span
+                      >
+                      <span
+                        class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white"
+                        >تهران- خ شادمان</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="h-12 w-px bg-[#868686] md:hidden lg:block hidden"
+                  ></div>
+                  <!-- Email -->
+                  <div
+                    class="flex items-center flex-1 lg:gap-6 md:gap-2 justify-center md:justify-normal lg:justify-center gap-1.5"
+                    dir="rtl"
+                  >
+                    <img
+                      src="./public/img/footer/email.svg"
+                      class="lg:w-auto md:w-8 w-4"
+                    />
+                    <div class="flex flex-col items-center gap-2">
+                      <span
+                        class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white mb-1"
+                        >ایمیل</span
+                      >
+                      <span
+                        class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white"
+                        >autorent@info.com</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="h-12 w-px bg-[#868686] md:hidden lg:block hidden"
+                  ></div>
+                  <!-- Contact -->
+                  <div
+                    class="flex items-center flex-1 lg:gap-6 md:gap-2 justify-center md:justify-normal lg:justify-center gap-1.5"
+                    dir="rtl"
+                  >
+                    <img
+                      src="./public/img/footer/call.svg"
+                      class="lg:w-auto md:w-8 w-4"
+                    />
+                    <div class="flex flex-col items-center gap-2">
+                      <span
+                        class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white mb-1"
+                        >ارتباط با ما</span
+                      >
+                      <span
+                        class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white"
+                        >0912-2123456</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Lower Part -->
+              <div class="container w-full mx-auto">
+                <div
+                  class="flex lg:flex-row md:flex-row flex-col justify-evenly lg:items-center md:items-center items-end lg:gap-9 md:gap-5 mx-auto"
+                >
+                  <div
+                    class="flex flex-col gap-2 lg:w-auto md:w-auto w-full"
+                    dir="rtl"
+                  >
+                    <span
+                      class="font-[estedad-medium] text-white text-base mb-2"
+                      >خبرنامه</span
+                    >
+                    <form
+                      id="newsletter-form"
+                      class="flex flex-col gap-2 lg:max-w-[320px] lg:min-w-[280px]"
+                    >
+                      <div
+                        class="flex items-center justify-between gap-2 rounded-lg border border-[#868686] bg-transparent px-1"
+                      >
+                        <input
+                          type="email"
+                          id="newsletter-email"
+                          placeholder="ایمیل خود را وارد کنید"
+                          class="text-xs rounded-lg px-2 py-2 bg-transparent text-white placeholder:text-[#C2C2C2] placeholder:font-[estedad-regular] placeholder:text-xs focus:outline-none leading-[1.5rem] w-full"
+                        />
+                        <button
+                          type="submit"
+                          class="bg-[#FDB713] text-black font-[estedad-medium] rounded-lg px-2 py-1 cursor-pointer text-[14px]"
+                        >
+                          ارسال
+                        </button>
+                      </div>
+                      <div
+                        id="email-error"
+                        class="text-yellow-400 text-xs font-[estedad-regular] hidden"
+                      >
+                        ایمیل اشتباه است
+                      </div>
+                    </form>
+                  </div>
+                  <div
+                    class="flex lg:flex-col md:flex-col flex-row lg:gap-3 md:gap-3 gap-5 md:items-start lg:items-start items-center lg:justify-center md:justify-center justify-evenly lg:ml-12 w-full md:w-auto lg:w-auto my-5 md:my-0 lg:my-0"
+                    dir="rtl"
+                  >
+                    <span
+                      class="font-[estedad-regular] text-white lg:text-base md:text-base text-sm mb-3 hidden lg:block md:block"
+                      >دسترسی آسان</span
+                    >
+                    <a
+                      href="#"
+                      class="text-white font-[estedad-regular] lg:text-sm md:text-sm text-xs"
+                      >سوالات متداول</a
+                    >
+                    <a
+                      href="#"
+                      class="text-white font-[estedad-regular] lg:text-sm md:text-sm text-xs"
+                      >تماس با ما</a
+                    >
+                    <a
+                      href="#"
+                      class="text-white font-[estedad-regular] lg:text-sm md:text-sm text-xs"
+                      >درباره ما</a
+                    >
+                  </div>
+                  <!-- logo -->
+                  <div
+                    class="flex flex-col items-end gap-2 text-right justify-center"
+                  >
+                    <img
+                      src="/public/img/footer/Logo.svg"
+                      class="lg:w-auto mb-2 md:w-auto w-[80px]"
+                    />
+                    <p
+                      class="font-[estedad-regular] text-white lg:text-xs md:text-xs text-[10px] leading-[190%] lg:max-w-[407px] md:max-w-[225px] max-w-max"
+                      dir="rtl"
+                    >
+                      اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن
+                      بزرگترین ناوگان خودرویی متشکل از انواع خودروهای صفر
+                      کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده
+                      خدمت‌رسانی به مشتریان است.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr class="border-[#868686] lg:mt-5 md:mt-5 mt-2" />
+              <!-- CC -->
+              <div
+                class="text-center text-[#C2C2C2] lg:text-xs md:text-xs text-[10px] font-[estedad-regular] mt-2"
+              >
+                <span
+                  class="inline-flex items-center gap-1 lg:mt-5 md:mt-3 my-4 lg:my-0 md:my-0"
+                  dir="rtl"
+                >
+                  <img
+                    src="/public/img/footer/creative-commons.svg"
+                    class="w-4 h-4"
+                  />
+                  تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+                </span>
+              </div>
+            </footer>
+          </div>
         </div>
       </div>
-      <!-- close relative wrapper for key absolute position elements -->
+      <!-- close relative wrapper for absolute position elements -->
     </div>
     <!-- end website -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

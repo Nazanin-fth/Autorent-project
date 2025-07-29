@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "daisyui";
 @font-face {
   font-family: "estedad-medium";
   src: url("/public/font/ttf/FD/Estedad-FD-Medium.ttf");
@@ -87,7 +87,7 @@ body.search-open .menu {
     @apply lg:w-[312px] lg:h-[186px] w-[344px] h-[160px] md:h-[125px] bg-white rounded-[16px] border border-[#E5E5E5] lg:py-4 lg:px-6 shadow-md flex flex-col items-center gap-2 py-1 px-1.5;
   }
   .card-title {
-    @apply text-[#414141] text-center font-[estedad-bold] lg:text-base text-xs;
+    @apply text-[8px] text-[#414141] text-center font-[estedad-bold] lg:text-base md:text-xs;
   }
   .card-text {
     @apply text-[#757575] lg:text-xs text-[10px] font-[estedad-regular] text-center lg:leading-[1.8] leading-[1.6];
@@ -95,8 +95,38 @@ body.search-open .menu {
   .button-title {
     @apply text-[#353535] text-center font-[estedad-bold] lg:text-2xl text-xs mt-2;
   }
-  .tab-button{
-    @apply lg:w-[128px] lg:h-[48px] lg:px-4 md:w-24 md:px-1 py-1 px-3.5 h-9 w-16 border border-[#194BF0] rounded-lg lg:text-[14px] text-xs font-[estedad-medium] text-[#194BF0] flex items-center justify-center lg:gap-2 text-center hover:!bg-[#194BF0] hover:!text-white transition-colors duration-200 cursor-pointer
+  .tab-button {
+    @apply lg:w-[128px] lg:h-[48px] lg:px-4 md:w-24 md:px-1 py-1 px-3.5 h-9 w-16 border border-[#194BF0] rounded-lg lg:text-[14px] text-xs font-[estedad-medium] text-[#194BF0] flex items-center justify-center lg:gap-2 text-center hover:!bg-[#194BF0] hover:!text-white transition-colors duration-200 cursor-pointer;
+  }
+  .grid-card {
+    @apply lg:w-[365px] lg:max-w-[392px] md:w-[355px] w-[330px] h-[515px] bg-white rounded-[16px] border border-[#D7D7D7] p-4 flex flex-col gap-2 mx-auto;
+  }
+  .grid-pic {
+    @apply lg:w-[330px] h-[225px] w-[300px] lg:max-w-[350px] rounded-[12px] border border-[#F3F3F3] object-contain object-left lg:object-center mx-auto;
+  }
+  .grid-discount {
+    @apply absolute top-2 left-3 flex items-center justify-center gap-0.5 bg-[#08237D] text-white rounded-[8px] p-2 text-xs font-bold w-8 h-[29px] font-[estedad-medium] text-center;
+  }
+  .grid-title {
+    @apply font-[estedad-bold] text-[16px] text-right lg:max-w-[360px] w-full text-black h-6;
+  }
+  .grid-text {
+    @apply text-xs text-[#757575] text-right lg:max-w-[360px] w-full font-[estedad-regular] flex flex-row-reverse gap-1 items-center;
+  }
+  .grid-price {
+    @apply flex items-center justify-between lg:max-w-[360px] w-full h-[44px] bg-[#F3F3F3] rounded-[8px] px-2 py-2 relative;
+  }
+  .grid-span {
+    @apply text-xs text-[#353535] font-[estedad-regular];
+  }
+  .grid-cost {
+    @apply absolute right-20 font-[estedad-bold] text-base text-[#194BF0];
+  }
+  .grid-button {
+    @apply lg:max-w-[360px] h-[40px] rounded-[8px] px-4 py-1 bg-[#194BF0] text-white font-[estedad-medium] transition hover:bg-[#08237D] text-sm;
+  }
+  .transparent-card {
+    @apply flex items-center justify-between absolute z-20 lg:gap-4 md:gap-3 gap-2;
   }
 }
 .pwt-datepicker-input-element {
@@ -104,5 +134,13 @@ body.search-open .menu {
 }
 .orange-bar {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
+.comment-selected {
+  background-color: #fdb713;
+}
+@media (max-width: 767px) {
+  .card-title {
+    font-size: 10px !important;
+  }
 }
 
