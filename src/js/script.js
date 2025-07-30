@@ -38,6 +38,47 @@ toggle.addEventListener("click", (e) => {
 overlay.addEventListener("click", () => {
   closeSearch();
 });
+
+// Rent.html Search functionality
+const toggle2 = document.getElementById("searchToggle2");
+const overlay2 = document.getElementById("overlay2");
+const searchBox2 = document.getElementById("searchBox2");
+const loginButton2 = document.getElementById("loginButton2");
+const logo2 = document.querySelector(".header-logo");
+
+if (toggle2 && overlay2 && searchBox2) {
+  function openSearch2() {
+    document.body.classList.add("search-open");
+    overlay2.classList.remove("hidden");
+    searchBox2.classList.remove("hidden");
+    searchBox2.classList.add("flex");
+    loginButton2?.classList.add("hidden");
+    logo2?.classList.add("ml-auto");
+  }
+
+  function closeSearch2() {
+    document.body.classList.remove("search-open");
+    overlay2.classList.add("hidden");
+    searchBox2.classList.add("hidden");
+    searchBox2.classList.remove("flex");
+    loginButton2?.classList.remove("hidden");
+    logo2?.classList.remove("ml-auto");
+  }
+
+  toggle2.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isHidden = searchBox2.classList.contains("hidden");
+    if (isHidden) {
+      openSearch2();
+    } else {
+      closeSearch2();
+    }
+  });
+
+  overlay2.addEventListener("click", () => {
+    closeSearch2();
+  });
+}
 // Mobile Menu Overlay
 const menuToggle = document.getElementById("menu-toggle");
 
@@ -188,3 +229,42 @@ document.querySelectorAll(".comment-item").forEach((btn, idx) => {
   });
 });
 // Newsletter email validation
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("loaded");
+  const form = document.getElementById("newsletter-form");
+  const emailInput = document.getElementById("newsletter-email");
+  const errorBox = document.getElementById("email-error");
+  const emailWrapper = document.getElementById("email-wrapper");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = emailInput.value.trim();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    // Remove previous error messages
+    emailWrapper.classList.remove("border-[#FDB713]");
+    emailWrapper.classList.add("border-[#868686]");
+
+    if (email === "") {
+      errorBox.innerText = "لطفاً ایمیل را وارد کنید";
+      errorBox.classList.remove("hidden");
+      emailWrapper.classList.add("border-[#FDB713]");
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      errorBox.innerText = "ایمیل وارد شده معتبر نیست";
+      errorBox.classList.remove("hidden");
+      emailWrapper.classList.add("border-[#FDB713]");
+      console.log("email is invalid!");
+      return;
+    }
+
+    // Success case
+    errorBox.innerText = "ایمیل شما با موفقیت ثبت شد";
+    emailWrapper.classList.remove("border-[#FDB713]");
+    console.log("ایمیل معتبر است:", email);
+    form.reset();
+  });
+});
