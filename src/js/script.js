@@ -39,46 +39,6 @@ overlay.addEventListener("click", () => {
   closeSearch();
 });
 
-// Rent.html Search functionality
-const toggle2 = document.getElementById("searchToggle2");
-const overlay2 = document.getElementById("overlay2");
-const searchBox2 = document.getElementById("searchBox2");
-const loginButton2 = document.getElementById("loginButton2");
-const logo2 = document.querySelector(".header-logo");
-
-if (toggle2 && overlay2 && searchBox2) {
-  function openSearch2() {
-    document.body.classList.add("search-open");
-    overlay2.classList.remove("hidden");
-    searchBox2.classList.remove("hidden");
-    searchBox2.classList.add("flex");
-    loginButton2?.classList.add("hidden");
-    logo2?.classList.add("ml-auto");
-  }
-
-  function closeSearch2() {
-    document.body.classList.remove("search-open");
-    overlay2.classList.add("hidden");
-    searchBox2.classList.add("hidden");
-    searchBox2.classList.remove("flex");
-    loginButton2?.classList.remove("hidden");
-    logo2?.classList.remove("ml-auto");
-  }
-
-  toggle2.addEventListener("click", (e) => {
-    e.preventDefault();
-    const isHidden = searchBox2.classList.contains("hidden");
-    if (isHidden) {
-      openSearch2();
-    } else {
-      closeSearch2();
-    }
-  });
-
-  overlay2.addEventListener("click", () => {
-    closeSearch2();
-  });
-}
 // Mobile Menu Overlay
 const menuToggle = document.getElementById("menu-toggle");
 

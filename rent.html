@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-[#F3F3F3]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +9,14 @@
       type="image/x-icon"
       href="public/img/favicon/favicon.svg"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+    ></script>
     <link href="./src/css/output.css" rel="stylesheet" />
   </head>
   <body class="w-full h-full bg-[#F3F3F3]">
-    <div class="main w-screen h-fit">
+    <div class="main w-screen h-[2000px]" dir="rtl">
+      <!-- Background image and overlay -->
       <div class="relative bg-black text-white h-[400px] w-full">
         <div
           class="absolute inset-0 bg-[url('/public/rent/img/page.jpg')] bg-cover bg-center z-0 opacity-40"
@@ -41,7 +45,7 @@
             <!-- search box mobile -->
             <div
               dir="ltr"
-              class="flex px-4 py-3 rounded-md border-b border-gray-500 overflow-hidden lg:max-w-md w-1/1 mx-auto gap hidden-1 self-start"
+              class="flex px-4 py-3 rounded-md border-b border-gray-500 overflow-hidden lg:max-w-md w-1/1 mx-auto gap-2 hidden-1 self-start"
             >
               <input
                 type="text"
@@ -76,11 +80,13 @@
             >
           </div>
           <div class="header-logo2">
-            <img
-              src="public/img/logo/Logo.svg"
-              alt=""
-              class="logo w-22 md:w-39 lg:!mr-0 cursor-pointer md:mr-21 self-center"
-            />
+            <a href="./index.html">
+              <img
+                src="/public/img/logo/Logo.svg"
+                alt=""
+                class="logo w-22 md:w-39 lg:!mr-0 cursor-pointer md:mr-21 self-center"
+              />
+            </a>
           </div>
           <!-- desktop menu -->
           <div
@@ -116,7 +122,7 @@
               href="#"
               id="searchToggle2"
               class="!text-gray-600 font-medium transition-all hover:!text-blue-600 !font-[estedad-regular]"
-              ><img src="public/img/icon/1search.svg" alt="" srcset=""
+              ><img src="/public/img/icon/1search.svg" alt="" srcset=""
             /></a>
           </div>
 
@@ -129,13 +135,14 @@
               class="w-full flex items-center border-b border-[#D7D7D7] pb-6 gap-2"
             >
               <img
-                src="public/img/icon/1search.svg"
+                src="/public/img/icon/1search.svg"
                 alt="search icon"
                 class="w-6 h-6"
               />
               <input
                 type="text"
                 placeholder="جستجو"
+                name="search-input-desktop"
                 class="w-full bg-transparent focus:outline-none text-gray-600 text-base placeholder-[#C2C2C2]"
               />
             </div>
@@ -194,6 +201,7 @@
           </a>
         </header>
         <!-- end header -->
+        <!-- Hero text and Breadcrumbs -->
         <div
           class="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
           dir="rtl"
@@ -214,7 +222,1039 @@
           </ul>
         </div>
       </div>
+      <!-- Filters & Mobile Filter Section -->
+      <div
+        class="filters-container mx-auto mt-14 relative w-[97%] h-[45px] flex items-center justify-center"
+      >
+        <div class="flex justify-center">
+          <!-- Mobile filter dialog -->
+          <el-dialog>
+            <dialog
+              id="mobile-filters"
+              class="overflow-hidden backdrop:bg-transparent lg:hidden md:hidden"
+            >
+              <el-dialog-backdrop
+                class="fixed inset-0 bg-black/25 transition-opacity duration-300 ease-linear data-closed:opacity-0"
+              ></el-dialog-backdrop>
+
+              <div tabindex="0" class="fixed inset-0 flex focus:outline-none">
+                <el-dialog-panel
+                  class="relative ml-auto flex size-full max-w-xs transform flex-col overflow-y-auto bg-white pt-4 pb-6 shadow-xl transition duration-300 ease-in-out data-closed:translate-x-full"
+                >
+                  <div class="flex items-center justify-between px-4" dir="rtl">
+                    <h2 class="text-lg font-[estedad-medium] text-[#727272]">
+                      فیلتر ها
+                    </h2>
+                    <button
+                      type="button"
+                      command="close"
+                      commandfor="mobile-filters"
+                      class="relative -mr-2 flex size-10 items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:outline-hidden"
+                    >
+                      <span class="absolute -inset-0.5"></span>
+                      <span class="sr-only">Close menu</span>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        data-slot="icon"
+                        aria-hidden="true"
+                        class="size-6"
+                      >
+                        <path
+                          d="M6 18 18 6M6 6l12 12"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <!-- Filters -->
+                  <form class="mt-4 border-t border-gray-200">
+                    <div dir="rtl" class="border-t border-gray-200 px-4 py-6">
+                      <h3 class="-mx-2 -my-3 flow-root">
+                        <button
+                          type="button"
+                          command="--toggle"
+                          commandfor="filter-section-mobile-color"
+                          class="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500"
+                        >
+                          <span
+                            class="font-[estedad-medium] text-[#727272] text-xs"
+                          >
+                            قیمت اجاره خودرو
+                          </span>
+                          <span class="ml-6 flex items-center w-4 h-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="size-5 in-aria-expanded:hidden"
+                            >
+                              <path
+                                d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"
+                              />
+                            </svg>
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="size-5 not-in-aria-expanded:hidden"
+                            >
+                              <path
+                                d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </h3>
+                      <el-disclosure
+                        id="filter-section-mobile-color"
+                        hidden
+                        class="block pt-6"
+                      >
+                        <div class="space-y-6">
+                          <!-- Range slider Mobile -->
+                          <div dir="rtl" class="w-full max-w-md mx-auto mt-2">
+                            <div
+                              class="mb-4 text-sm text-gray-700 flex justify-center font-[estedad-regular] gap-2"
+                            >
+                              <p>از</p>
+                              <span id="price-min" class="price-min">۶٬۰۰۰٬۰۰۰ تومان</span>
+                              <p>تا</p>
+                              <span id="price-max" class="price-max">۶۰٬۰۰۰٬۰۰۰ تومان</span>
+                            </div>
+                            <div class="relative h-2 bg-gray-200 rounded-full">
+                              <input
+                                type="range"
+                                id="rangeMin"
+                                min="6000000"
+                                max="60000000"
+                                step="100000"
+                                value="6000000"
+                                class="rangeMin absolute w-full h-2 appearance-none bg-transparent pointer-events-none z-10"
+                              />
+                              <input
+                                type="range"
+                                id="rangeMax"
+                                min="6000000"
+                                max="60000000"
+                                step="100000"
+                                value="60000000"
+                                class="rangeMax absolute w-full h-2 appearance-none bg-[transparent] pointer-events-none z-10"
+                              />
+                              <div
+                                id="range-track"
+                                class="range-track absolute h-2 bg-[#194BF0] rounded-full z-0"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </el-disclosure>
+                    </div>
+                    <div dir="rtl" class="border-t border-gray-200 px-4 py-6">
+                      <h3 class="-mx-2 -my-3 flow-root">
+                        <button
+                          type="button"
+                          command="--toggle"
+                          commandfor="filter-section-mobile-category"
+                          class="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500"
+                        >
+                          <span
+                            class="font-[estedad-medium] text-[#727272] text-xs"
+                            >برند خودرو</span
+                          >
+                          <span class="ml-6 flex items-center w-4 h-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="size-5 in-aria-expanded:hidden"
+                            >
+                              <path
+                                d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"
+                              />
+                            </svg>
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="size-5 not-in-aria-expanded:hidden"
+                            >
+                              <path
+                                d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </h3>
+                      <el-disclosure
+                        id="filter-section-mobile-category"
+                        hidden
+                        class="block pt-6"
+                      >
+                        <div class="space-y-6">
+                          <!-- Brand  -->
+                          <div
+                            class="section-content flex flex-col justify-center gap-2 mt-2 text-[#494949] font-[estedad-regular] overflow-y-hidden transition-all ease-in-out duration-100 text-xs"
+                          >
+                            <label class="flex items-center"
+                              ><input
+                                type="checkbox"
+                                class="custom-checkbox"
+                                checked
+                              />
+                              اجاره بنز</label
+                            >
+                            <label class="flex items-center"
+                              ><input type="checkbox" class="custom-checkbox" />
+                              اجاره بی ام و</label
+                            >
+                            <label class="flex items-center"
+                              ><input type="checkbox" class="custom-checkbox" />
+                              اجاره پژو</label
+                            >
+                            <label class="flex items-center"
+                              ><input type="checkbox" class="custom-checkbox" />
+                              اجاره پورشه</label
+                            >
+                            <label class="flex items-center"
+                              ><input type="checkbox" class="custom-checkbox" />
+                              اجاره کیا</label
+                            >
+                            <label class="flex items-center"
+                              ><input type="checkbox" class="custom-checkbox" />
+                              اجاره هیوندای</label
+                            >
+                          </div>
+                        </div>
+                      </el-disclosure>
+                    </div>
+                    <div dir="rtl" class="border-t border-gray-200 px-4 py-6">
+                      <h3 class="-mx-2 -my-3 flow-root">
+                        <button
+                          type="button"
+                          command="--toggle"
+                          commandfor="filter-section-mobile-size"
+                          class="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500"
+                        >
+                          <span
+                            class="font-[estedad-medium] text-[#727272] text-xs leading-[180%]"
+                          >
+                            اجاره خودرو براساس نیاز شما
+                          </span>
+                          <span class="ml-6 flex items-center w-4 h-4">
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="size-5 in-aria-expanded:hidden"
+                            >
+                              <path
+                                d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"
+                              />
+                            </svg>
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              aria-hidden="true"
+                              class="size-5 not-in-aria-expanded:hidden"
+                            >
+                              <path
+                                d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z"
+                                clip-rule="evenodd"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </h3>
+                      <el-disclosure
+                        id="filter-section-mobile-size"
+                        hidden
+                        class="block pt-6"
+                      >
+                        <div class="space-y-6">
+                          <!-- Needs -->
+                          <div
+                            class="section-content flex flex-col justify-center gap-2 mt-2 font-[14px] text-[#494949] font-[estedad-regular] overflow-y-hidden transition-all ease-in-out duration-100 text-xs"
+                          >
+                            <label class="flex items-center"
+                              ><input
+                                type="radio"
+                                name="radio"
+                                class="custom-radio"
+                                checked
+                              />
+                              اجاره خودرو با راننده</label
+                            >
+                            <label class="flex items-center"
+                              ><input
+                                type="radio"
+                                name="radio"
+                                class="custom-radio"
+                              />
+                              اجاره خودرو بدون راننده</label
+                            >
+                            <label class="flex items-center"
+                              ><input
+                                type="radio"
+                                name="radio"
+                                class="custom-radio"
+                              />
+                              اجاره خودرو ایرانی</label
+                            >
+                            <label class="flex items-center"
+                              ><input
+                                type="radio"
+                                name="radio"
+                                class="custom-radio"
+                              />اجاره خودرو لوکس</label
+                            >
+                            <label class="flex items-center"
+                              ><input
+                                type="radio"
+                                name="radio"
+                                class="custom-radio"
+                              />
+                              اجاره خودرو تشریفات</label
+                            >
+                            <label class="flex items-center"
+                              ><input
+                                type="radio"
+                                name="radio"
+                                class="custom-radio"
+                              />
+                              اجاره ماشین عروس</label
+                            >
+                          </div>
+                        </div>
+                      </el-disclosure>
+                    </div>
+                  </form>
+                </el-dialog-panel>
+              </div>
+            </dialog>
+          </el-dialog>
+
+          <main class="w-full px-1" dir="ltr">
+            <div class="">
+              <h1 class="text-4xl font-bold tracking-tight text-gray-900"></h1>
+
+              <div class="flex items-center">
+                <el-dropdown class="relative inline-block text-center">
+                  <!-- Xl-Button -->
+                  <button
+                    class="group inline-flex justify-between text-sm font-medium text-[#868686] hover:text-gray-900 font-[estedad-medium] border border-[#9A9A9A] px-3 py-2 rounded-[8px] lg:w-[287px] md:w-[220px] mr-6"
+                    dir="rtl"
+                  >
+                    مرتب سازی
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      data-slot="icon"
+                      aria-hidden="true"
+                      class="-ml-1 mr-1 size-5 shrink-0 text-gray-400 group-hover:text-gray-500"
+                    >
+                      <path
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <el-menu
+                    dir="rtl"
+                    anchor="bottom end"
+                    popover
+                    class="w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                  >
+                    <div class="py-1" dir="rtl">
+                      <!-- Selected: "font-medium text-gray-900", Not Selected: "text-gray-500" -->
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm font-[estedad-regular] text-gray-900 focus:bg-gray-100 focus:outline-hidden"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                    </div>
+                  </el-menu>
+                </el-dropdown>
+                <el-dropdown class="relative inline-block text-center">
+                  <!-- l-Button -->
+                  <button
+                    class="group inline-flex justify-between text-sm font-medium text-[#868686] hover:text-gray-900 font-[estedad-medium] border border-[#9A9A9A] px-3 py-2 rounded-[8px] lg:w-[600px] md:w-[280px]"
+                    dir="rtl"
+                  >
+                    تقویم قیمتی
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      data-slot="icon"
+                      aria-hidden="true"
+                      class="-ml-1 mr-1 size-5 shrink-0 text-gray-400 group-hover:text-gray-500"
+                    >
+                      <path
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                        fill-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <el-menu
+                    dir="rtl"
+                    anchor="bottom end"
+                    popover
+                    class="w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                  >
+                    <div class="py-1" dir="rtl">
+                      <!-- Selected: "font-medium text-gray-900", Not Selected: "text-gray-500" -->
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm font-[estedad-regular] text-gray-900 focus:bg-gray-100 focus:outline-hidden"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-500 focus:bg-gray-100 focus:outline-hidden font-[estedad-regular]"
+                        >لورم ایپسوم</a
+                      >
+                    </div>
+                  </el-menu>
+                </el-dropdown>
+                <button
+                  type="button"
+                  command="show-modal"
+                  commandfor="mobile-filters"
+                  class="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:mr-6 lg:hidden md:hidden"
+                >
+                  <span class="sr-only">Filters</span>
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="size-5"
+                  >
+                    <path
+                      d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 0 1 .628.74v2.288a2.25 2.25 0 0 1-.659 1.59l-4.682 4.683a2.25 2.25 0 0 0-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 0 1 8 18.25v-5.757a2.25 2.25 0 0 0-.659-1.591L2.659 6.22A2.25 2.25 0 0 1 2 4.629V2.34a.75.75 0 0 1 .628-.74Z"
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <div
+        class="div-container w-[96%] flex flex-row lg:justify-center md:justify-between justify-center lg:gap-6 md:gap-4 mx-auto"
+        dir="rtl"
+      >
+        <!-- Filter Section -->
+        <div
+          class="lg:w-[288px] md:w-[260px] hidden md:block h-fit mt-6 bg-white rounded-[14px] py-6 px-1"
+          dir="rtl"
+        >
+          <div class="collapse collapse-arrow items-center">
+            <input type="checkbox" name="1" />
+            <div
+              class="collapse-title font-[estedad-medium] text-[#727272] text-base"
+            >
+              قیمت اجاره خودرو
+            </div>
+            <div
+              class="collapse-content text-sm overflow-y-hidden transition-all ease-in-out duration-100"
+            >
+              <!-- Range Slider -->
+              <div dir="rtl" class="w-full max-w-md mx-auto mt-2">
+                <div
+                  class="mb-4 text-sm text-gray-700 flex justify-center font-[estedad-regular] gap-2"
+                >
+                  <p>از</p>
+                  <span id="price-min-2" class="price-min-2">۶٬۰۰۰٬۰۰۰ تومان</span>
+                  <p>تا</p>
+                  <span id="price-max-2" class="price-max-2">۶۰٬۰۰۰٬۰۰۰ تومان</span>
+                </div>
+                <div class="relative h-2 bg-gray-200 rounded-full">
+                  <input
+                    type="range"
+                    id="rangeMin2"
+                    min="6000000"
+                    max="60000000"
+                    step="100000"
+                    value="6000000"
+                    class="rangeMin2 absolute w-full h-2 appearance-none bg-transparent pointer-events-none z-10"
+                  />
+                  <input
+                    type="range"
+                    id="rangeMax2"
+                    min="6000000"
+                    max="60000000"
+                    step="100000"
+                    value="60000000"
+                    class="rangeMax2 absolute w-full h-2 appearance-none bg-[transparent] pointer-events-none z-10"
+                  />
+                  <div
+                    id="range-track-2"
+                    class="range-track-2 absolute h-2 bg-[#194BF0] rounded-full z-0"
+                  ></div>
+                </div>
+              </div>
+              <hr class="h-px bg-[#CBCBCB] border-0 mt-4" />
+            </div>
+          </div>
+          <div class="collapse collapse-arrow items-center">
+            <input type="checkbox" />
+            <div class="collapse-title font-[estedad-medium] text-[#727272]">
+              برند خودرو
+            </div>
+            <div
+              class="collapse-content text-[#494949] font-[estedad-regular] overflow-y-hidden transition-all ease-in-out duration-100"
+            >
+              <div
+                class="section-content flex flex-col justify-center gap-2 mt-2"
+              >
+                <label class="flex items-center"
+                  ><input type="checkbox" class="custom-checkbox" checked />
+                  اجاره بنز</label
+                >
+                <label class="flex items-center"
+                  ><input type="checkbox" class="custom-checkbox" /> اجاره بی ام
+                  و</label
+                >
+                <label class="flex items-center"
+                  ><input type="checkbox" class="custom-checkbox" /> اجاره
+                  پژو</label
+                >
+                <label class="flex items-center"
+                  ><input type="checkbox" class="custom-checkbox" /> اجاره
+                  پورشه</label
+                >
+                <label class="flex items-center"
+                  ><input type="checkbox" class="custom-checkbox" /> اجاره
+                  کیا</label
+                >
+                <label class="flex items-center"
+                  ><input type="checkbox" class="custom-checkbox" /> اجاره
+                  هیوندای</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow items-center">
+            <input type="checkbox" />
+            <div
+              class="collapse-title font-[estedad-medium] text-[#727272] leading-[180%]"
+            >
+              اجاره خودرو براساس نیاز شما
+            </div>
+            <div
+              class="collapse-content text-[#494949] font-[estedad-regular] overflow-y-hidden transition-all ease-in-out duration-100"
+            >
+              <div
+                class="section-content flex flex-col justify-center gap-2 mt-2 font-[14px]"
+              >
+                <label class="flex items-center"
+                  ><input
+                    type="radio"
+                    name="radio"
+                    class="custom-radio"
+                    checked
+                  />
+                  اجاره خودرو با راننده</label
+                >
+                <label class="flex items-center"
+                  ><input type="radio" name="radio" class="custom-radio" />
+                  اجاره خودرو بدون راننده</label
+                >
+                <label class="flex items-center"
+                  ><input type="radio" name="radio" class="custom-radio" />
+                  اجاره خودرو ایرانی</label
+                >
+                <label class="flex items-center"
+                  ><input type="radio" name="radio" class="custom-radio" />اجاره
+                  خودرو لوکس</label
+                >
+                <label class="flex items-center"
+                  ><input type="radio" name="radio" class="custom-radio" />
+                  اجاره خودرو تشریفات</label
+                >
+                <label class="flex items-center"
+                  ><input type="radio" name="radio" class="custom-radio" />
+                  اجاره ماشین عروس</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 md:gap-3 gap-6 w-fit max-w-[97%] justify-items-center mt-6"
+        >
+          <div class="grid-card-2">
+            <div class="relative mb-2" dir="rtl">
+              <img
+                src="./public/img/grid/genesis.jpg"
+                alt="car"
+                class="grid-pic-2"
+              />
+              <div class="grid-discount">٪۲۰</div>
+            </div>
+            <div class="grid-title">اجاره جنسیس کوپه</div>
+            <div class="grid-text">
+              :مدل
+              <p>۲۰۱۶</p>
+            </div>
+            <!-- price -->
+            <div
+              class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+            >
+              <div class="grid-price">
+                <span class="grid-span">قیمت روزانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+              <div class="grid-price">
+                <span class="grid-span">قیمت ماهانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+            </div>
+            <div
+              dir="rtl"
+              class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+            >
+              <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+              <span class="font-[estedad-bold]">80 میلیون تومان</span>
+            </div>
+            <button class="grid-button">درخواست رزرو</button>
+          </div>
+          <div class="grid-card-2">
+            <div class="relative mb-2" dir="rtl">
+              <img
+                src="./public/img/grid/Toyota.jpg"
+                alt="car"
+                class="grid-pic-2"
+              />
+            </div>
+            <div class="grid-title">اجاره تویوتا لندکروزر 2013</div>
+            <div class="grid-text">
+              :مدل
+              <p>۲۰۱۶</p>
+            </div>
+            <!-- price -->
+            <div
+              class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+            >
+              <div class="grid-price">
+                <span class="grid-span">قیمت روزانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+              <div class="grid-price">
+                <span class="grid-span">قیمت ماهانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+            </div>
+            <div
+              dir="rtl"
+              class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+            >
+              <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+              <span class="font-[estedad-bold]">80 میلیون تومان</span>
+            </div>
+            <button class="grid-button">درخواست رزرو</button>
+          </div>
+          <div class="grid-card-2">
+            <div class="relative mb-2" dir="rtl">
+              <img
+                src="./public/img/grid/sedan-m.jpg"
+                alt="car"
+                class="grid-pic-2"
+              />
+              <div class="grid-discount">٪۲۰</div>
+            </div>
+            <div class="grid-title">سدان E350 اجاره بنز</div>
+            <div class="grid-text">
+              :مدل
+              <p>۲۰۱۶</p>
+            </div>
+            <!-- price -->
+            <div
+              class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+            >
+              <div class="grid-price">
+                <span class="grid-span">قیمت روزانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+              <div class="grid-price">
+                <span class="grid-span">قیمت ماهانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+            </div>
+            <div
+              dir="rtl"
+              class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+            >
+              <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+              <span class="font-[estedad-bold]">80 میلیون تومان</span>
+            </div>
+            <button class="grid-button">درخواست رزرو</button>
+          </div>
+          <div class="grid-card-2">
+            <div class="relative mb-2" dir="rtl">
+              <img
+                src="./public/img/grid/maserati.jpg"
+                alt="car"
+                class="grid-pic-2"
+              />
+            </div>
+            <div class="grid-title">اجاره مازراتی گرن توریسمو</div>
+            <div class="grid-text">
+              :مدل
+              <p>۲۰۱۲</p>
+            </div>
+            <!-- price -->
+            <div
+              class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+            >
+              <div class="grid-price">
+                <span class="grid-span">قیمت روزانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+              <div class="grid-price">
+                <span class="grid-span">قیمت ماهانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+            </div>
+            <div
+              dir="rtl"
+              class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+            >
+              <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+              <span class="font-[estedad-bold]">800 میلیون تومان</span>
+            </div>
+            <button class="grid-button">درخواست رزرو</button>
+          </div>
+          <div class="grid-card-2">
+            <div class="relative mb-2" dir="rtl">
+              <img
+                src="./public/img/grid/Tucson.jpg"
+                alt="car"
+                class="grid-pic-2"
+              />
+              <div class="grid-discount">٪۲۰</div>
+            </div>
+            <div class="grid-title">اجاره هیوندای توسان 2014</div>
+            <div class="grid-text">
+              :مدل
+              <p>۲۰۱۴</p>
+            </div>
+            <!-- price -->
+            <div
+              class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+            >
+              <div class="grid-price">
+                <span class="grid-span">قیمت روزانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+              <div class="grid-price">
+                <span class="grid-span">قیمت ماهانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+            </div>
+            <div
+              dir="rtl"
+              class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+            >
+              <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+              <span class="font-[estedad-bold]">80 میلیون تومان</span>
+            </div>
+            <button class="grid-button">درخواست رزرو</button>
+          </div>
+          <div class="grid-card-2">
+            <div class="relative mb-2" dir="rtl">
+              <img
+                src="./public/img/grid/bmw-528.jpg"
+                alt="car"
+                class="grid-pic-2"
+              />
+            </div>
+            <div class="grid-title">اجاره بی ام و 528</div>
+            <div class="grid-text">
+              :مدل
+              <p>۲۰۱۶</p>
+            </div>
+            <!-- price -->
+            <div
+              class="flex flex-col gap-2 items-center border-b border-[#D7D7D7] pb-3"
+            >
+              <div class="grid-price">
+                <span class="grid-span">قیمت روزانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+              <div class="grid-price">
+                <span class="grid-span">قیمت ماهانه</span>
+                <span class="grid-cost">8,500,000</span>
+                <span class="grid-span">:از ۱ تا ۳۰ روز</span>
+              </div>
+            </div>
+            <div
+              dir="rtl"
+              class="text-xs flex justify-between text-[#212121] text-right lg:max-w-[360px]"
+            >
+              <span class="font-[estedad-medium]"> مبلغ ضمانت:</span>
+              <span class="font-[estedad-bold]">80 میلیون تومان</span>
+            </div>
+            <button class="grid-button">درخواست رزرو</button>
+          </div>
+          <!-- End grid -->
+        </div>
+      </div>
+      <!-- Start Footer -->
+      <div class="container-footer lg:h-[495px] md:h-[480px] h-[460px] w-full lg:mt-[80px] md:mt-[70px] mt-[60px]" dir="ltr">
+        <footer
+          class="flex lg:w-6/7 md:w-11/12 w-19/20 m-3 h-fit relative mx-auto bg-[#1E1E1EE8] lg:pb-12 lg:pt-14 lg:px-6 md:p-5 rounded-2xl flex-col mb-[44px] p-2"
+        >
+          <!-- BG -->
+          <div
+            class="absolute inset-0 bg-[url('/public/img/footer/bg.png')] bg-cover bg-center z-0 opacity-10 pointer-events-none"
+          ></div>
+          <!-- Upper Part -->
+          <div class="lg:w-full w-full flex justify-center mb-4 mx-auto">
+            <div
+              class="w-full h-[101px] rounded-[16px] border border-[#868686] flex items-center lg:justify-between md:justify-normal lg:gap-[81px] gap-4 md:gap-20 lg:px-6 lg:py-4 md:p-2 shadow-[0_0_6px_0_#00000059]"
+            >
+              <!-- Address -->
+              <div
+                class="flex items-center flex-1 lg:gap-6 md:gap-2 justify-center md:justify-normal lg:justify-center gap-1.5"
+                dir="rtl"
+              >
+                <img
+                  src="./public/img/footer/map.svg"
+                  class="lg:w-auto md:w-8 w-4"
+                />
+                <div class="flex flex-col items-center gap-2">
+                  <span
+                    class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white mb-1"
+                    >آدرس</span
+                  >
+                  <span
+                    class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white"
+                    >تهران- خ شادمان</span
+                  >
+                </div>
+              </div>
+              <div
+                class="h-12 w-px bg-[#868686] md:hidden lg:block hidden"
+              ></div>
+              <!-- Email -->
+              <div
+                class="flex items-center flex-1 lg:gap-6 md:gap-2 justify-center md:justify-normal lg:justify-center gap-1.5"
+                dir="rtl"
+              >
+                <img
+                  src="./public/img/footer/email.svg"
+                  class="lg:w-auto md:w-8 w-4"
+                />
+                <div class="flex flex-col items-center gap-2">
+                  <span
+                    class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white mb-1"
+                    >ایمیل</span
+                  >
+                  <span
+                    class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white"
+                    >autorent@info.com</span
+                  >
+                </div>
+              </div>
+              <div
+                class="h-12 w-px bg-[#868686] md:hidden lg:block hidden"
+              ></div>
+              <!-- Contact -->
+              <div
+                class="flex items-center flex-1 lg:gap-6 md:gap-2 justify-center md:justify-normal lg:justify-center gap-1.5"
+                dir="rtl"
+              >
+                <img
+                  src="./public/img/footer/call.svg"
+                  class="lg:w-auto md:w-8 w-4"
+                />
+                <div class="flex flex-col items-center gap-2">
+                  <span
+                    class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white mb-1"
+                    >ارتباط با ما</span
+                  >
+                  <span
+                    class="font-[estedad-light] lg:text-base md:text-xs text-[10px] text-white"
+                    >0912-2123456</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Lower Part -->
+          <div class="container w-full mx-auto">
+            <div
+              class="flex lg:flex-row md:flex-row flex-col justify-evenly lg:items-center md:items-center items-end lg:gap-9 md:gap-5 mx-auto"
+            >
+              <div
+                class="flex flex-col gap-2 lg:w-auto md:w-auto w-full"
+                dir="rtl"
+              >
+                <span class="font-[estedad-medium] text-white text-base mb-2"
+                  >خبرنامه</span
+                >
+                <form
+                  id="newsletter-form"
+                  novalidate
+                  class="flex flex-col gap-2 lg:max-w-[320px] lg:min-w-[280px]"
+                >
+                  <div
+                    id="email-wrapper"
+                    class="flex items-center justify-between gap-2 rounded-lg border border-[#868686] bg-transparent px-1"
+                  >
+                    <input
+                      type="email"
+                      id="newsletter-email"
+                      placeholder="ایمیل خود را وارد کنید"
+                      class="text-xs rounded-lg px-2 py-2 bg-transparent text-white placeholder:text-[#C2C2C2] placeholder:font-[estedad-regular] placeholder:text-xs focus:outline-none leading-[1.5rem] w-full"
+                    />
+                    <button
+                      type="submit"
+                      class="bg-[#FDB713] text-black font-[estedad-medium] rounded-lg px-2 py-1 cursor-pointer text-[14px]"
+                    >
+                      ارسال
+                    </button>
+                  </div>
+                  <div
+                    id="email-error"
+                    class="text-[#FDB713] text-xs font-[estedad-regular] hidden"
+                  >
+                    ایمیل اشتباه است
+                  </div>
+                </form>
+              </div>
+              <div
+                class="flex lg:flex-col md:flex-col flex-row lg:gap-3 md:gap-3 gap-5 md:items-start lg:items-start items-center lg:justify-center md:justify-center justify-evenly lg:ml-12 w-full md:w-auto lg:w-auto my-5 md:my-0 lg:my-0"
+                dir="rtl"
+              >
+                <span
+                  class="font-[estedad-regular] text-white lg:text-base md:text-base text-sm mb-3 hidden lg:block md:block"
+                  >دسترسی آسان</span
+                >
+                <a
+                  href="#"
+                  class="text-white font-[estedad-regular] lg:text-sm md:text-sm text-xs"
+                  >سوالات متداول</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-[estedad-regular] lg:text-sm md:text-sm text-xs"
+                  >تماس با ما</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-[estedad-regular] lg:text-sm md:text-sm text-xs"
+                  >درباره ما</a
+                >
+              </div>
+              <!-- logo -->
+              <div
+                class="flex flex-col items-end gap-2 text-right justify-center"
+              >
+                <img
+                  src="/public/img/footer/Logo.svg"
+                  class="lg:w-auto mb-2 md:w-auto w-[80px]"
+                />
+                <p
+                  class="font-[estedad-regular] text-white lg:text-xs md:text-xs text-[10px] leading-[190%] lg:max-w-[407px] md:max-w-[225px] max-w-max"
+                  dir="rtl"
+                >
+                  اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین
+                  ناوگان خودرویی متشکل از انواع خودروهای صفر کیلومتر، اقتصادی تا
+                  تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr class="border-[#868686] lg:mt-5 md:mt-5 mt-2" />
+          <!-- CC -->
+          <div
+            class="text-center text-[#C2C2C2] lg:text-xs md:text-xs text-[10px] font-[estedad-regular] mt-2"
+          >
+            <span
+              class="inline-flex items-center gap-1 lg:mt-5 md:mt-3 my-4 lg:my-0 md:my-0"
+              dir="rtl"
+            >
+              <img
+                src="/public/img/footer/creative-commons.svg"
+                class="w-4 h-4"
+              />
+              تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+            </span>
+          </div>
+        </footer>
+      </div>
     </div>
-    <script src="./src/js/script.js"></script>
+    <script src="./src/js/rent.js"></script>
   </body>
 </html>

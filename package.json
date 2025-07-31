@@ -16,6 +16,7 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.6",
     "jquery": "^3.7.1",
+    "nouislider": "^15.8.1",
     "persian-date": "^1.1.0",
     "persian-datepicker": "^1.2.0",
     "tailwindcss": "^4.1.6"
