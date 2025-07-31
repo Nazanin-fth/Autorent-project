@@ -2718,7 +2718,7 @@
     background-color: var(--color-white);
   }
   .bg-\[url\(\'\/img\/cars\/header\.jpg\'\)\] {
-    background-image: url('/img/cars/header.jpg');
+    background-image: url('./public/img/cars/header.jpg');
   }
   .bg-\[url\(\'\/public\/img\/footer\/bg\.png\'\)\] {
     background-image: url('/public/img/footer/bg.png');
