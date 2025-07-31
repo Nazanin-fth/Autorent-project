@@ -2717,17 +2717,23 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .bg-\[url\(\'\.\/public\/img\/cars\/header\.jpg\'\)\] {
-    background-image: url('./public/img/cars/header.jpg');
-  }
-  .bg-\[url\(\'\.\/public\/rent\/img\/page\.jpg\'\)\] {
-    background-image: url('./public/rent/img/page.jpg');
-  }
-  .bg-\[url\(\'\/public\/img\/cars\/header\.jpg\'\)\] {
-    background-image: url('/public/img/cars/header.jpg');
+  .bg-\[url\(\'\/img\/cars\/header\.jpg\'\)\] {
+    background-image: url('/img/cars/header.jpg');
   }
   .bg-\[url\(\'\/public\/img\/footer\/bg\.png\'\)\] {
     background-image: url('/public/img/footer/bg.png');
+  }
+  .bg-\[url\(\'\/public\/rent\/img\/page\.jpg\'\)\] {
+    background-image: url('/public/rent/img/page.jpg');
+  }
+  .bg-\[url\(\'\/rent\/img\/page\.jpg\'\)\] {
+    background-image: url('/rent/img/page.jpg');
+  }
+  .bg-\[url\(\'rent\/img\/page\.jpg\'\)\] {
+    background-image: url('rent/img/page.jpg');
+  }
+  .bg-\[url\(\'ژrent\/img\/page\.jpg\'\)\] {
+    background-image: url('ژrent/img/page.jpg');
   }
   .bg-cover {
     background-size: cover;
@@ -4465,27 +4471,27 @@
 }
 @font-face {
   font-family: "estedad-medium";
-  src: url("./public/font/ttf/FD/Estedad-FD-Medium.ttf");
+  src: url("/font/ttf/FD/Estedad-FD-Medium.ttf");
 }
 @font-face {
   font-family: "estedad-regular";
-  src: url("./public/font/ttf/FD/Estedad-FD-Regular.ttf");
+  src: url("/font/ttf/FD/Estedad-FD-Regular.ttf");
 }
 @font-face {
   font-family: "estedad-light";
-  src: url("./public/font/ttf/FD/Estedad-FD-Light.ttf");
+  src: url("/font/ttf/FD/Estedad-FD-Light.ttf");
 }
 @font-face {
   font-family: "estedad-bold";
-  src: url("./public/font/ttf/FD/Estedad-FD-Bold.ttf");
+  src: url("/font/ttf/FD/Estedad-FD-Bold.ttf");
 }
 @font-face {
   font-family: "estedad-extralight";
-  src: url("./public/font/ttf/FD/Estedad-FD-ExtraLight.ttf");
+  src: url("/font/ttf/FD/Estedad-FD-ExtraLight.ttf");
 }
 @font-face {
   font-family: "estedad-extrabold";
-  src: url("./public/font/ttf/FD/Estedad-FD-ExtraBold.ttf");
+  src: url("/font/ttf/FD/Estedad-FD-ExtraBold.ttf");
 }
 body.search-open .menu {
   display: none !important;
