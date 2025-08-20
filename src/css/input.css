@@ -243,3 +243,12 @@ input[type="range"]::-moz-range-thumb {
 .custom-radio:checked::before {
   background-color: #194bf0;
 }
+.bg-custom-1{
+  background-image: url("../../public/img/cars/header.jpg");
+}
+.bg-custom-2{
+  background-image: url("../../public/rent/img/page.jpg");
+}
+.bg-custom-footer{
+  background-image: url("../../public/img/footer/bg.png");
+}
