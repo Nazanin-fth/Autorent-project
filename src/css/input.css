@@ -250,5 +250,5 @@ input[type="range"]::-moz-range-thumb {
   background-image: url("../../public/rent/img/page.jpg");
 }
 .bg-custom-footer{
-  background-image: url("../../public/img/footer/bg.png");
+  background-image: url("./public/img/footer/bg.png");
 }
